@@ -55,7 +55,7 @@
 <div class="wrap">
   <h1>MSBI — анализ загрузки кубов</h1>
   <div class="sub">Дни: 03.10.2026 · 05.10.2026 · 28.10.2026 &nbsp;|&nbsp; Время: Тюмень (UTC+5) &nbsp;|&nbsp;
-  Источник: метабаза Airflow (prod, dag_run + task_instance) &nbsp;|&nbsp; Сгенерировано: 2026-10-29 12:36:32</div>
+  Источник: метабаза Airflow (prod, dag_run + task_instance) &nbsp;|&nbsp; Сгенерировано: 2026-10-29 12:51:24</div>
 
   <div class="tabs">
     <button id="tab-gantt" class="tab active" onclick="setTab('gantt')">Гант дагов</button>
@@ -825,665 +825,666 @@
   </div>
 
   <div id="panel-a28" class="tabpanel" style="display:none">
-    <div class="cards"><div class="card"><div class="v">58</div><div class="l">дагов проанализировано</div></div><div class="card"><div class="v red">5</div><div class="l">стартовали позже &gt;15м</div></div><div class="card"><div class="v red">13</div><div class="l">считались дольше &gt;5м</div></div><div class="card"><div class="v red">1</div><div class="l">упали (FAILED)</div></div><div class="card"><div class="v">6</div><div class="l">с повторами задач</div></div></div>
-    <div class="panel findings"><ul><li><b>Да, были заметные задержки старта.</b> Позже обычного (&gt;15м) стартовали <b>5</b> дагов: <b>sk_cube</b> (+85м), <b>ph_cube</b> (+85м), <b>st_cube</b> (+77м), <b>pb_cube</b> (+29м), <b>pb_facts</b> (+29м).</li><li><b>Да, многие даги считались дольше.</b> Дольше обычного (&gt;5м) работали <b>13</b> дагов: <b>sd_cube</b> (3ч 21м 51с, +129м), <b>sc_cube</b> (2ч 52м 30с, +107м), <b>pl_facts</b> (2ч 41м 48с, +106м), <b>ph_facts</b> (2ч 50м 47с, +97м), <b>st_facts</b> (4ч 08м 07с, +85м), <b>sk_facts</b> (2ч 26м 22с, +85м).</li><li><b>sd_cube упал</b> (try=2, шёл 3ч 21м 51с вместо ~1ч 12м 23с) и был <b>перезапущен вручную</b> в 08:34–09:44.</li><li>Часть дагов, наоборот, стартовала <b>раньше</b> обычного: <b>pl_msk_cube</b> (-303м), <b>pl_msk_facts</b> (-295м), <b>pl_facts</b> (-171м) — данные по ним были готовы раньше.</li><li><b>Итог:</b> задержка старта кубов — следствие того, что <b>факты считались заметно дольше</b>, а sd_cube упал.</li></ul></div>
-    <div class="panel"><h3>Задержка старта (28.10 минус среднее по 03.10/05.10)</h3><svg viewBox="0 0 1000 1310.0" width="100%" class="chart-svg" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+    <div class="cards"><div class="card"><div class="v">58</div><div class="l">дагов проанализировано</div></div><div class="card"><div class="v red">3</div><div class="l">стартовали позже &gt;15м</div></div><div class="card"><div class="v red">11</div><div class="l">считались дольше &gt;5м</div></div><div class="card"><div class="v red">1</div><div class="l">упали (FAILED)</div></div><div class="card"><div class="v">6</div><div class="l">с повторами задач</div></div></div>
+    <div class="legend-note">База сравнения — среднее значение по плановым запускам за сентябрь 2026 (по 26–30 дней на даг).</div>
+    <div class="panel findings"><ul><li><b>Да, были заметные задержки старта.</b> Позже обычного (&gt;15м) стартовали <b>3</b> дагов: <b>sk_cube</b> (+83м), <b>st_cube</b> (+49м), <b>ph_cube</b> (+39м).</li><li><b>Да, многие даги считались дольше.</b> Дольше обычного (&gt;5м) работали <b>11</b> дагов: <b>sd_cube</b> (3ч 21м 51с, +128м), <b>sc_cube</b> (2ч 52м 30с, +109м), <b>pl_facts</b> (2ч 41м 48с, +96м), <b>ph_facts</b> (2ч 50м 47с, +81м), <b>st_facts</b> (4ч 08м 07с, +75м), <b>sk_facts</b> (2ч 26м 22с, +65м).</li><li><b>sd_cube упал</b> (try=2, шёл 3ч 21м 51с вместо ~1ч 13м 58с) и был <b>перезапущен вручную</b> в 08:34–09:44.</li><li>Часть дагов, наоборот, стартовала <b>раньше</b> обычного: <b>pl_msk_cube</b> (-336м), <b>pl_msk_facts</b> (-325м), <b>pl_facts</b> (-201м) — данные по ним были готовы раньше.</li><li><b>Итог:</b> задержка старта кубов — следствие того, что <b>факты считались заметно дольше</b>, а sd_cube упал.</li></ul></div>
+    <div class="panel"><h3>Задержка старта (28.10 минус среднее за сентябрь 2026)</h3><svg viewBox="0 0 1000 1310.0" width="100%" class="chart-svg" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
 <line x1="605.0" y1="8.0" x2="605.0" y2="1284.0" stroke="#555" stroke-width="1.2"/>
-<line x1="622.4838587835366" y1="8.0" x2="622.4838587835366" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
-<line x1="587.5161412164634" y1="8.0" x2="587.5161412164634" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
-<g data-tip="Куб — Продажи Строители (SK)&#10;msbi_reload_sk_cube&#10;Δ = +85м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="11.0" width="99.58028902712044" height="16.0" fill="#e15759" rx="2"/>
+<line x1="620.7450476842423" y1="8.0" x2="620.7450476842423" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
+<line x1="589.2549523157577" y1="8.0" x2="589.2549523157577" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
+<g data-tip="Куб — Продажи Строители (SK)&#10;msbi_reload_sk_cube&#10;Δ = +83м">
+<rect x="605.0" y="11.0" width="86.64324795664265" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="23.0" font-size="11.5" fill="#333" text-anchor="end">sk_cube</text>
-<text x="708.5802890271204" y="23.0" font-size="10.5" fill="#333" text-anchor="start">+85м</text>
+<text x="695.6432479566427" y="23.0" font-size="10.5" fill="#333" text-anchor="start">+83м</text>
 </g>
-<g data-tip="Куб — Продажи Братец Лис (PH)&#10;msbi_reload_ph_cube&#10;Δ = +85м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="33.0" width="99.26946487096859" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="45.0" font-size="11.5" fill="#333" text-anchor="end">ph_cube</text>
-<text x="708.2694648709686" y="45.0" font-size="10.5" fill="#333" text-anchor="start">+85м</text>
+<g data-tip="Куб — Запасы (ST)&#10;msbi_reload_st_cube&#10;Δ = +49м">
+<rect x="605.0" y="33.0" width="51.500301525413875" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="45.0" font-size="11.5" fill="#333" text-anchor="end">st_cube</text>
+<text x="660.5003015254139" y="45.0" font-size="10.5" fill="#333" text-anchor="start">+49м</text>
 </g>
-<g data-tip="Куб — Запасы (ST)&#10;msbi_reload_st_cube&#10;Δ = +77м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="55.0" width="89.72133532418172" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="67.0" font-size="11.5" fill="#333" text-anchor="end">st_cube</text>
-<text x="698.7213353241817" y="67.0" font-size="10.5" fill="#333" text-anchor="start">+77м</text>
+<g data-tip="Куб — Продажи Братец Лис (PH)&#10;msbi_reload_ph_cube&#10;Δ = +39м">
+<rect x="605.0" y="55.0" width="40.51375714129813" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="67.0" font-size="11.5" fill="#333" text-anchor="end">ph_cube</text>
+<text x="649.5137571412981" y="67.0" font-size="10.5" fill="#333" text-anchor="start">+39м</text>
 </g>
-<g data-tip="Куб — Платежный баланс (PB)&#10;msbi_reload_pb_cube&#10;Δ = +29м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="77.0" width="34.37520901940877" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="89.0" font-size="11.5" fill="#333" text-anchor="end">pb_cube</text>
-<text x="643.3752090194088" y="89.0" font-size="10.5" fill="#333" text-anchor="start">+29м</text>
+<g data-tip="Факты — Платежный баланс (PB)&#10;msbi_reload_pb_facts&#10;Δ = +15м">
+<rect x="605.0" y="77.0" width="15.531614815633702" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="89.0" font-size="11.5" fill="#333" text-anchor="end">pb_facts</text>
+<text x="624.5316148156337" y="89.0" font-size="10.5" fill="#333" text-anchor="start">+15м</text>
 </g>
-<g data-tip="Факты — Платежный баланс (PB)&#10;msbi_reload_pb_facts&#10;Δ = +29м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="99.0" width="34.06438486325703" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="111.0" font-size="11.5" fill="#333" text-anchor="end">pb_facts</text>
-<text x="643.064384863257" y="111.0" font-size="10.5" fill="#333" text-anchor="start">+29м</text>
+<g data-tip="Факты — Продажи дистрибуции (TV)&#10;msbi_reload_tv_facts&#10;Δ = +11м">
+<rect x="605.0" y="99.0" width="11.08101467022118" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="111.0" font-size="11.5" fill="#333" text-anchor="end">tv_facts</text>
+<text x="620.0810146702212" y="111.0" font-size="10.5" fill="#333" text-anchor="start">+11м</text>
 </g>
-<g data-tip="Измерения — ОСВ (BS)&#10;msbi_reload_bs_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="121.0" width="9.14988609671741" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="133.0" font-size="11.5" fill="#333" text-anchor="end">bs_dims</text>
-<text x="618.1498860967174" y="133.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Платежный баланс (PB)&#10;msbi_reload_pb_dims&#10;Δ = +7м">
+<rect x="605.0" y="121.0" width="7.64159647608551" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="133.0" font-size="11.5" fill="#333" text-anchor="end">pb_dims</text>
+<text x="616.6415964760855" y="133.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Кредиторская задолженность (AP)&#10;msbi_reload_ap_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="143.0" width="9.01390052840111" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="155.0" font-size="11.5" fill="#333" text-anchor="end">ap_dims</text>
-<text x="618.0139005284011" y="155.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Планы продаж (SP)&#10;msbi_reload_sp_dims&#10;Δ = +7м">
+<rect x="605.0" y="143.0" width="7.526132793067859" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="155.0" font-size="11.5" fill="#333" text-anchor="end">sp_dims</text>
+<text x="616.5261327930679" y="155.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Запасы (ST)&#10;msbi_reload_st_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="165.0" width="8.848775195445455" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="177.0" font-size="11.5" fill="#333" text-anchor="end">st_dims</text>
-<text x="617.8487751954455" y="177.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Кредиторская задолженность (AP)&#10;msbi_reload_ap_dims&#10;Δ = +7м">
+<rect x="605.0" y="165.0" width="7.477148200272495" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="177.0" font-size="11.5" fill="#333" text-anchor="end">ap_dims</text>
+<text x="616.4771482002725" y="177.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Платежный баланс (PB)&#10;msbi_reload_pb_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="187.0" width="8.839061940565557" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="199.0" font-size="11.5" fill="#333" text-anchor="end">pb_dims</text>
-<text x="617.8390619405656" y="199.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Дебиторская задолженность (AR)&#10;msbi_reload_ar_dims&#10;Δ = +7м">
+<rect x="605.0" y="187.0" width="7.424664707991724" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="199.0" font-size="11.5" fill="#333" text-anchor="end">ar_dims</text>
+<text x="616.4246647079917" y="199.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Планы продаж (SP)&#10;msbi_reload_sp_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="209.0" width="8.800208921046647" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="221.0" font-size="11.5" fill="#333" text-anchor="end">sp_dims</text>
-<text x="617.8002089210466" y="221.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Продажи розница (SD)&#10;msbi_reload_sd_dims&#10;Δ = +7м">
+<rect x="605.0" y="209.0" width="7.421165808506089" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="221.0" font-size="11.5" fill="#333" text-anchor="end">sd_dims</text>
+<text x="616.4211658085061" y="221.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Продажи розница (SD)&#10;msbi_reload_sd_dims&#10;Δ = +8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="231.0" width="8.761355901527736" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="243.0" font-size="11.5" fill="#333" text-anchor="end">sd_dims</text>
-<text x="617.7613559015277" y="243.0" font-size="10.5" fill="#333" text-anchor="start">+8м</text>
+<g data-tip="Измерения — Запасы (ST)&#10;msbi_reload_st_dims&#10;Δ = +7м">
+<rect x="605.0" y="231.0" width="7.421165808506089" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="243.0" font-size="11.5" fill="#333" text-anchor="end">st_dims</text>
+<text x="616.4211658085061" y="243.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Продажи дистрибуции (TV)&#10;msbi_reload_tv_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="253.0" width="8.683649862489915" height="16.0" fill="#e15759" rx="2"/>
+<g data-tip="Измерения — Продажи дистрибуции (TV)&#10;msbi_reload_tv_dims&#10;Δ = +7м">
+<rect x="605.0" y="253.0" width="7.41066911004998" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="265.0" font-size="11.5" fill="#333" text-anchor="end">tv_dims</text>
-<text x="617.6836498624899" y="265.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<text x="616.41066911005" y="265.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Продажи Братец Лис (PH)&#10;msbi_reload_ph_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="275.0" width="8.567090803932842" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="287.0" font-size="11.5" fill="#333" text-anchor="end">ph_dims</text>
-<text x="617.5670908039328" y="287.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Измерения — ОСВ (BS)&#10;msbi_reload_bs_dims&#10;Δ = +7м">
+<rect x="605.0" y="275.0" width="7.389675713137649" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="287.0" font-size="11.5" fill="#333" text-anchor="end">bs_dims</text>
+<text x="616.3896757131376" y="287.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — БДР (PL)&#10;msbi_reload_pl_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="297.0" width="8.518524529534261" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="309.0" font-size="11.5" fill="#333" text-anchor="end">pl_dims</text>
-<text x="617.5185245295343" y="309.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Куб — Продажи дистрибуции (TV)&#10;msbi_reload_tv_cube&#10;Δ = +7м">
+<rect x="605.0" y="297.0" width="7.323196622915361" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="309.0" font-size="11.5" fill="#333" text-anchor="end">tv_cube</text>
+<text x="616.3231966229154" y="309.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Msk_dims — БДР (PL)&#10;msbi_reload_pl_msk_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="319.0" width="8.518524529534261" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="331.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_dims</text>
-<text x="617.5185245295343" y="331.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Измерения — БДР (PL)&#10;msbi_reload_pl_dims&#10;Δ = +7м">
+<rect x="605.0" y="319.0" width="7.319697723429954" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="331.0" font-size="11.5" fill="#333" text-anchor="end">pl_dims</text>
+<text x="616.31969772343" y="331.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Продажи Объектив (OB)&#10;msbi_reload_ob_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="341.0" width="8.450531745375997" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="353.0" font-size="11.5" fill="#333" text-anchor="end">ob_dims</text>
-<text x="617.450531745376" y="353.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Msk_dims — БДР (PL)&#10;msbi_reload_pl_msk_dims&#10;Δ = +7м">
+<rect x="605.0" y="341.0" width="7.319697723429954" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="353.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_dims</text>
+<text x="616.31969772343" y="353.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Продажи Строители (SK)&#10;msbi_reload_sk_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="363.0" width="8.450531745375997" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="375.0" font-size="11.5" fill="#333" text-anchor="end">sk_dims</text>
-<text x="617.450531745376" y="375.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Измерения — Транспортная логистика (TL)&#10;msbi_reload_tl_dims&#10;Δ = +7м">
+<rect x="605.0" y="363.0" width="7.305702125488438" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="375.0" font-size="11.5" fill="#333" text-anchor="end">tl_dims</text>
+<text x="616.3057021254884" y="375.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Транспортная логистика (TL)&#10;msbi_reload_tl_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="385.0" width="8.450531745375997" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="397.0" font-size="11.5" fill="#333" text-anchor="end">tl_dims</text>
-<text x="617.450531745376" y="397.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Измерения — Продажи Братец Лис (PH)&#10;msbi_reload_ph_dims&#10;Δ = +7м">
+<rect x="605.0" y="385.0" width="7.30570212548821" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="397.0" font-size="11.5" fill="#333" text-anchor="end">ph_dims</text>
+<text x="616.3057021254882" y="397.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Измерения — Дебиторская задолженность (AR)&#10;msbi_reload_ar_dims&#10;Δ = +7м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="407.0" width="8.314546177059697" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="419.0" font-size="11.5" fill="#333" text-anchor="end">ar_dims</text>
-<text x="617.3145461770597" y="419.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
+<g data-tip="Измерения — Продажи Объектив (OB)&#10;msbi_reload_ob_dims&#10;Δ = +7м">
+<rect x="605.0" y="407.0" width="7.221728537839226" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="419.0" font-size="11.5" fill="#333" text-anchor="end">ob_dims</text>
+<text x="616.2217285378392" y="419.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Факты — Продажи Строители (SK)&#10;msbi_reload_sk_facts&#10;Δ = +1м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="429.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="441.0" font-size="11.5" fill="#333" text-anchor="end">sk_facts</text>
-<text x="609.9616122330945" y="441.0" font-size="10.5" fill="#333" text-anchor="start">+1м</text>
+<g data-tip="Измерения — Продажи Строители (SK)&#10;msbi_reload_sk_dims&#10;Δ = +7м">
+<rect x="605.0" y="429.0" width="7.1692450455582275" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="441.0" font-size="11.5" fill="#333" text-anchor="end">sk_dims</text>
+<text x="616.1692450455582" y="441.0" font-size="10.5" fill="#333" text-anchor="start">+7м</text>
 </g>
-<g data-tip="Куб — Продажи дистрибуции (TV)&#10;msbi_reload_tv_cube&#10;Δ = 0м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="451.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="463.0" font-size="11.5" fill="#333" text-anchor="end">tv_cube</text>
-<text x="609.038853019519" y="463.0" font-size="10.5" fill="#333" text-anchor="start">0м</text>
+<g data-tip="Общее — Скоринг (SC)&#10;msbi_reload_sc_common&#10;Δ = +3м">
+<rect x="605.0" y="451.0" width="2.8096162867659586" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="463.0" font-size="11.5" fill="#333" text-anchor="end">sc_common</text>
+<text x="611.809616286766" y="463.0" font-size="10.5" fill="#333" text-anchor="start">+3м</text>
 </g>
-<g data-tip="Факты — Продажи Объектив (OB)&#10;msbi_reload_ob_facts&#10;Δ = 0м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="473.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="485.0" font-size="11.5" fill="#333" text-anchor="end">ob_facts</text>
-<text x="609.0291397646392" y="485.0" font-size="10.5" fill="#333" text-anchor="start">0м</text>
+<g data-tip="Вчерашний инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_yesterday_invoice&#10;Δ = 0м">
+<rect x="604.9265231108069" y="473.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="485.0" font-size="11.5" fill="#333" text-anchor="end">sk_yesterday_invoice</text>
+<text x="600.9265231108069" y="485.0" font-size="10.5" fill="#333" text-anchor="end">0м</text>
 </g>
-<g data-tip="Факты — Продажи дистрибуции (TV)&#10;msbi_reload_tv_facts&#10;Δ = 0м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.961146980481" y="495.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="507.0" font-size="11.5" fill="#333" text-anchor="end">tv_facts</text>
-<text x="600.961146980481" y="507.0" font-size="10.5" fill="#333" text-anchor="end">0м</text>
+<g data-tip="Факты — Планы продаж (SP)&#10;msbi_reload_sp_facts&#10;Δ = -2м">
+<rect x="603.1525810717155" y="495.0" width="1.847418928284469" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="507.0" font-size="11.5" fill="#333" text-anchor="end">sp_facts</text>
+<text x="599.1525810717155" y="507.0" font-size="10.5" fill="#333" text-anchor="end">-2м</text>
 </g>
-<g data-tip="Вчерашний инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_yesterday_invoice&#10;Δ = 0м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.9125807060823" y="517.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="529.0" font-size="11.5" fill="#333" text-anchor="end">sk_yesterday_invoice</text>
-<text x="600.9125807060823" y="529.0" font-size="10.5" fill="#333" text-anchor="end">0м</text>
+<g data-tip="Куб — Планы продаж (SP)&#10;msbi_reload_sp_cube&#10;Δ = -5м">
+<rect x="600.2589911973004" y="517.0" width="4.741008802699639" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="529.0" font-size="11.5" fill="#333" text-anchor="end">sp_cube</text>
+<text x="596.2589911973004" y="529.0" font-size="10.5" fill="#333" text-anchor="end">-5м</text>
 </g>
-<g data-tip="Измерения — Web-аналитика (WA)&#10;msbi_reload_wa_dims&#10;Δ = 0м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.4560577267345" y="539.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<g data-tip="Измерения — Web-аналитика (WA)&#10;msbi_reload_wa_dims&#10;Δ = -7м">
+<rect x="597.8202582559856" y="539.0" width="7.17974174401445" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="551.0" font-size="11.5" fill="#333" text-anchor="end">wa_dims</text>
-<text x="600.4560577267345" y="551.0" font-size="10.5" fill="#333" text-anchor="end">0м</text>
+<text x="593.8202582559856" y="551.0" font-size="10.5" fill="#333" text-anchor="end">-7м</text>
 </g>
-<g data-tip="Куб — Монитор дефицита (DM)&#10;msbi_reload_dm_cube&#10;Δ = -1м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.7664166302726" y="561.0" width="1.2335833697273983" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="573.0" font-size="11.5" fill="#333" text-anchor="end">dm_cube</text>
-<text x="599.7664166302726" y="573.0" font-size="10.5" fill="#333" text-anchor="end">-1м</text>
+<g data-tip="Факты — Продажи Объектив (OB)&#10;msbi_reload_ob_facts&#10;Δ = -8м">
+<rect x="596.2457534875613" y="561.0" width="8.754246512438726" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="573.0" font-size="11.5" fill="#333" text-anchor="end">ob_facts</text>
+<text x="592.2457534875613" y="573.0" font-size="10.5" fill="#333" text-anchor="end">-8м</text>
 </g>
-<g data-tip="Факты — Монитор дефицита (DM)&#10;msbi_reload_dm_facts&#10;Δ = -1м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.377886435083" y="583.0" width="1.6221135649169582" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="595.0" font-size="11.5" fill="#333" text-anchor="end">dm_facts</text>
-<text x="599.377886435083" y="595.0" font-size="10.5" fill="#333" text-anchor="end">-1м</text>
+<g data-tip="Факты — Продажи Строители (SK)&#10;msbi_reload_sk_facts&#10;Δ = -17м">
+<rect x="587.0191555445953" y="583.0" width="17.980844455404736" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="595.0" font-size="11.5" fill="#333" text-anchor="end">sk_facts</text>
+<text x="583.0191555445953" y="595.0" font-size="10.5" fill="#333" text-anchor="end">-17м</text>
 </g>
-<g data-tip="Общее — Скоринг (SC)&#10;msbi_reload_sc_common&#10;Δ = -1м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.2904671411653" y="605.0" width="1.7095328588346774" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="617.0" font-size="11.5" fill="#333" text-anchor="end">sc_common</text>
-<text x="599.2904671411653" y="617.0" font-size="10.5" fill="#333" text-anchor="end">-1м</text>
+<g data-tip="Куб — Платежный баланс (PB)&#10;msbi_reload_pb_cube&#10;Δ = -21м">
+<rect x="583.383798979278" y="605.0" width="21.616201020721974" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="617.0" font-size="11.5" fill="#333" text-anchor="end">pb_cube</text>
+<text x="579.383798979278" y="617.0" font-size="10.5" fill="#333" text-anchor="end">-21м</text>
 </g>
-<g data-tip="Факты — Планы продаж (SP)&#10;msbi_reload_sp_facts&#10;Δ = -2м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="602.775664632539" y="627.0" width="2.2243353674609807" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="639.0" font-size="11.5" fill="#333" text-anchor="end">sp_facts</text>
-<text x="598.775664632539" y="639.0" font-size="10.5" fill="#333" text-anchor="end">-2м</text>
+<g data-tip="Партиции — Скоринг (SC)&#10;msbi_reload_sc_partition&#10;Δ = -25м">
+<rect x="579.2620953854919" y="627.0" width="25.737904614508125" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="639.0" font-size="11.5" fill="#333" text-anchor="end">sc_partition</text>
+<text x="575.2620953854919" y="639.0" font-size="10.5" fill="#333" text-anchor="end">-25м</text>
 </g>
-<g data-tip="Факты — Транспортная логистика (TL)&#10;msbi_reload_tl_facts&#10;Δ = -5м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.5022977380657" y="649.0" width="5.497702261934251" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="661.0" font-size="11.5" fill="#333" text-anchor="end">tl_facts</text>
-<text x="595.5022977380657" y="661.0" font-size="10.5" fill="#333" text-anchor="end">-5м</text>
+<g data-tip="Факты — Продажи Братец Лис (PH)&#10;msbi_reload_ph_facts&#10;Δ = -32м">
+<rect x="571.0326837958613" y="649.0" width="33.96731620413868" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="661.0" font-size="11.5" fill="#333" text-anchor="end">ph_facts</text>
+<text x="567.0326837958613" y="661.0" font-size="10.5" fill="#333" text-anchor="end">-32м</text>
 </g>
-<g data-tip="Куб — Транспортная логистика (TL)&#10;msbi_reload_tl_cube&#10;Δ = -5м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.376025424629" y="671.0" width="5.623974575370994" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="683.0" font-size="11.5" fill="#333" text-anchor="end">tl_cube</text>
-<text x="595.376025424629" y="683.0" font-size="10.5" fill="#333" text-anchor="end">-5м</text>
+<g data-tip="Факты — Монитор дефицита (DM)&#10;msbi_reload_dm_facts&#10;Δ = -33м">
+<rect x="570.6897916462933" y="671.0" width="34.310208353706685" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="683.0" font-size="11.5" fill="#333" text-anchor="end">dm_facts</text>
+<text x="566.6897916462933" y="683.0" font-size="10.5" fill="#333" text-anchor="end">-33м</text>
 </g>
-<g data-tip="Куб — Планы продаж (SP)&#10;msbi_reload_sp_cube&#10;Δ = -8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="595.6267090410485" y="693.0" width="9.373290958951543" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="705.0" font-size="11.5" fill="#333" text-anchor="end">sp_cube</text>
-<text x="591.6267090410485" y="705.0" font-size="10.5" fill="#333" text-anchor="end">-8м</text>
+<g data-tip="Факты — Web-аналитика (WA)&#10;msbi_reload_wa_facts&#10;Δ = -35м">
+<rect x="567.8801753595275" y="693.0" width="37.11982464047253" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="705.0" font-size="11.5" fill="#333" text-anchor="end">wa_facts</text>
+<text x="563.8801753595275" y="705.0" font-size="10.5" fill="#333" text-anchor="end">-35м</text>
 </g>
-<g data-tip="Партиции — Скоринг (SC)&#10;msbi_reload_sc_partition&#10;Δ = -8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="595.490723472732" y="715.0" width="9.509276527267957" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="727.0" font-size="11.5" fill="#333" text-anchor="end">sc_partition</text>
-<text x="591.490723472732" y="727.0" font-size="10.5" fill="#333" text-anchor="end">-8м</text>
+<g data-tip="Куб — Web-аналитика (WA)&#10;msbi_reload_wa_cube&#10;Δ = -37м">
+<rect x="566.0082641348454" y="715.0" width="38.991735865154624" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="727.0" font-size="11.5" fill="#333" text-anchor="end">wa_cube</text>
+<text x="562.0082641348454" y="727.0" font-size="10.5" fill="#333" text-anchor="end">-37м</text>
 </g>
-<g data-tip="Факты — Запасы (ST)&#10;msbi_reload_st_facts&#10;Δ = -8м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="595.490723472732" y="737.0" width="9.509276527267957" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="749.0" font-size="11.5" fill="#333" text-anchor="end">st_facts</text>
-<text x="591.490723472732" y="749.0" font-size="10.5" fill="#333" text-anchor="end">-8м</text>
+<g data-tip="Куб — Продажи Объектив (OB)&#10;msbi_reload_ob_cube&#10;Δ = -38м">
+<rect x="565.4379435187271" y="737.0" width="39.56205648127286" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="749.0" font-size="11.5" fill="#333" text-anchor="end">ob_cube</text>
+<text x="561.4379435187271" y="749.0" font-size="10.5" fill="#333" text-anchor="end">-38м</text>
 </g>
-<g data-tip="Факты — Кредиторская задолженность (AP)&#10;msbi_reload_ap_facts&#10;Δ = -9м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="594.5388244945173" y="759.0" width="10.461175505482743" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="771.0" font-size="11.5" fill="#333" text-anchor="end">ap_facts</text>
-<text x="590.5388244945173" y="771.0" font-size="10.5" fill="#333" text-anchor="end">-9м</text>
+<g data-tip="Факты — Транспортная логистика (TL)&#10;msbi_reload_tl_facts&#10;Δ = -38м">
+<rect x="565.2979875393117" y="759.0" width="39.70201246068825" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="771.0" font-size="11.5" fill="#333" text-anchor="end">tl_facts</text>
+<text x="561.2979875393117" y="771.0" font-size="10.5" fill="#333" text-anchor="end">-38м</text>
 </g>
-<g data-tip="Факты — Web-аналитика (WA)&#10;msbi_reload_wa_facts&#10;Δ = -10м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="592.9944169686382" y="781.0" width="12.005583031361766" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="793.0" font-size="11.5" fill="#333" text-anchor="end">wa_facts</text>
-<text x="588.9944169686382" y="793.0" font-size="10.5" fill="#333" text-anchor="end">-10м</text>
+<g data-tip="Куб — Транспортная логистика (TL)&#10;msbi_reload_tl_cube&#10;Δ = -40м">
+<rect x="562.915236989763" y="781.0" width="42.084763010237" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="793.0" font-size="11.5" fill="#333" text-anchor="end">tl_cube</text>
+<text x="558.915236989763" y="793.0" font-size="10.5" fill="#333" text-anchor="end">-40м</text>
 </g>
-<g data-tip="Куб — Кредиторская задолженность (AP)&#10;msbi_reload_ap_cube&#10;Δ = -10м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="592.7710121064041" y="803.0" width="12.2289878935959" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="815.0" font-size="11.5" fill="#333" text-anchor="end">ap_cube</text>
-<text x="588.7710121064041" y="815.0" font-size="10.5" fill="#333" text-anchor="end">-10м</text>
+<g data-tip="Остатки — Скоринг (SC)&#10;msbi_reload_sc_stock&#10;Δ = -48м">
+<rect x="554.3184409541667" y="803.0" width="50.681559045833296" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="815.0" font-size="11.5" fill="#333" text-anchor="end">sc_stock</text>
+<text x="550.3184409541667" y="815.0" font-size="10.5" fill="#333" text-anchor="end">-48м</text>
 </g>
-<g data-tip="Факты — Продажи Братец Лис (PH)&#10;msbi_reload_ph_facts&#10;Δ = -11м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="591.760833598911" y="825.0" width="13.23916640108905" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="837.0" font-size="11.5" fill="#333" text-anchor="end">ph_facts</text>
-<text x="587.760833598911" y="837.0" font-size="10.5" fill="#333" text-anchor="end">-11м</text>
+<g data-tip="Факты — Запасы (ST)&#10;msbi_reload_st_facts&#10;Δ = -49м">
+<rect x="553.7131313431947" y="825.0" width="51.28686865680527" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="837.0" font-size="11.5" fill="#333" text-anchor="end">st_facts</text>
+<text x="549.7131313431947" y="837.0" font-size="10.5" fill="#333" text-anchor="end">-49м</text>
 </g>
-<g data-tip="Куб — Web-аналитика (WA)&#10;msbi_reload_wa_cube&#10;Δ = -12м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="590.5369634840634" y="847.0" width="14.463036515936551" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="859.0" font-size="11.5" fill="#333" text-anchor="end">wa_cube</text>
-<text x="586.5369634840634" y="859.0" font-size="10.5" fill="#333" text-anchor="end">-12м</text>
+<g data-tip="Остатки — Продажи розница (SD)&#10;msbi_reload_sd_stock&#10;Δ = -50м">
+<rect x="552.5864857089001" y="847.0" width="52.41351429109989" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="859.0" font-size="11.5" fill="#333" text-anchor="end">sd_stock</text>
+<text x="548.5864857089001" y="859.0" font-size="10.5" fill="#333" text-anchor="end">-50м</text>
 </g>
-<g data-tip="Куб — Продажи Объектив (OB)&#10;msbi_reload_ob_cube&#10;Δ = -14м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="588.7594378410705" y="869.0" width="16.240562158929492" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="881.0" font-size="11.5" fill="#333" text-anchor="end">ob_cube</text>
-<text x="584.7594378410705" y="881.0" font-size="10.5" fill="#333" text-anchor="end">-14м</text>
+<g data-tip="Факты — Дебиторская задолженность (AR)&#10;msbi_reload_ar_facts&#10;Δ = -69м">
+<rect x="532.8841827066849" y="869.0" width="72.1158172933151" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="881.0" font-size="11.5" fill="#333" text-anchor="end">ar_facts</text>
+<text x="528.8841827066849" y="881.0" font-size="10.5" fill="#333" text-anchor="end">-69м</text>
 </g>
-<g data-tip="Остатки — Скоринг (SC)&#10;msbi_reload_sc_stock&#10;Δ = -17м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="585.6220565149137" y="891.0" width="19.377943485086348" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="903.0" font-size="11.5" fill="#333" text-anchor="end">sc_stock</text>
-<text x="581.6220565149137" y="903.0" font-size="10.5" fill="#333" text-anchor="end">-17м</text>
+<g data-tip="Куб — Монитор дефицита (DM)&#10;msbi_reload_dm_cube&#10;Δ = -70м">
+<rect x="531.8974930518057" y="891.0" width="73.10250694819433" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="903.0" font-size="11.5" fill="#333" text-anchor="end">dm_cube</text>
+<text x="527.8974930518057" y="903.0" font-size="10.5" fill="#333" text-anchor="end">-70м</text>
 </g>
-<g data-tip="Остатки — Продажи розница (SD)&#10;msbi_reload_sd_stock&#10;Δ = -17м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="585.6220565149137" y="913.0" width="19.377943485086348" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="925.0" font-size="11.5" fill="#333" text-anchor="end">sd_stock</text>
-<text x="581.6220565149137" y="925.0" font-size="10.5" fill="#333" text-anchor="end">-17м</text>
+<g data-tip="Куб — Дебиторская задолженность (AR)&#10;msbi_reload_ar_cube&#10;Δ = -70м">
+<rect x="531.7435414744486" y="913.0" width="73.25645852555135" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="925.0" font-size="11.5" fill="#333" text-anchor="end">ar_cube</text>
+<text x="527.7435414744486" y="925.0" font-size="10.5" fill="#333" text-anchor="end">-70м</text>
 </g>
-<g data-tip="Куб — Скоринг (SC)&#10;msbi_reload_sc_cube&#10;Δ = -28м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="572.7131407797359" y="935.0" width="32.28685922026409" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="947.0" font-size="11.5" fill="#333" text-anchor="end">sc_cube</text>
-<text x="568.7131407797359" y="947.0" font-size="10.5" fill="#333" text-anchor="end">-28м</text>
+<g data-tip="Инвойс — Скоринг (SC)&#10;msbi_reload_sc_invoice&#10;Δ = -70м">
+<rect x="531.005273683032" y="935.0" width="73.99472631696801" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="947.0" font-size="11.5" fill="#333" text-anchor="end">sc_invoice</text>
+<text x="527.005273683032" y="947.0" font-size="10.5" fill="#333" text-anchor="end">-70м</text>
 </g>
-<g data-tip="Инвойс — Скоринг (SC)&#10;msbi_reload_sc_invoice&#10;Δ = -40м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="558.7357670077863" y="957.0" width="46.26423299221369" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="969.0" font-size="11.5" fill="#333" text-anchor="end">sc_invoice</text>
-<text x="554.7357670077863" y="969.0" font-size="10.5" fill="#333" text-anchor="end">-40м</text>
+<g data-tip="Факты — Продажи розница (SD)&#10;msbi_reload_sd_facts&#10;Δ = -71м">
+<rect x="530.0920609173459" y="957.0" width="74.90793908265414" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="969.0" font-size="11.5" fill="#333" text-anchor="end">sd_facts</text>
+<text x="526.0920609173459" y="969.0" font-size="10.5" fill="#333" text-anchor="end">-71м</text>
 </g>
-<g data-tip="Факты — Продажи розница (SD)&#10;msbi_reload_sd_facts&#10;Δ = -40м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="558.7357670077863" y="979.0" width="46.26423299221369" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="991.0" font-size="11.5" fill="#333" text-anchor="end">sd_facts</text>
-<text x="554.7357670077863" y="991.0" font-size="10.5" fill="#333" text-anchor="end">-40м</text>
+<g data-tip="Куб — Скоринг (SC)&#10;msbi_reload_sc_cube&#10;Δ = -72м">
+<rect x="529.6337050847602" y="979.0" width="75.36629491523979" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="991.0" font-size="11.5" fill="#333" text-anchor="end">sc_cube</text>
+<text x="525.6337050847602" y="991.0" font-size="10.5" fill="#333" text-anchor="end">-72м</text>
 </g>
-<g data-tip="Факты — Дебиторская задолженность (AR)&#10;msbi_reload_ar_facts&#10;Δ = -59м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="536.5021265880557" y="1001.0" width="68.49787341194428" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1013.0" font-size="11.5" fill="#333" text-anchor="end">ar_facts</text>
-<text x="532.5021265880557" y="1013.0" font-size="10.5" fill="#333" text-anchor="end">-59м</text>
+<g data-tip="Факты — Кредиторская задолженность (AP)&#10;msbi_reload_ap_facts&#10;Δ = -75м">
+<rect x="526.5056889448241" y="1001.0" width="78.4943110551759" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1013.0" font-size="11.5" fill="#333" text-anchor="end">ap_facts</text>
+<text x="522.5056889448241" y="1013.0" font-size="10.5" fill="#333" text-anchor="end">-75м</text>
 </g>
-<g data-tip="Куб — Дебиторская задолженность (AR)&#10;msbi_reload_ar_cube&#10;Δ = -59м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="536.2592952160621" y="1023.0" width="68.74070478393787" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1035.0" font-size="11.5" fill="#333" text-anchor="end">ar_cube</text>
-<text x="532.2592952160621" y="1035.0" font-size="10.5" fill="#333" text-anchor="end">-59м</text>
+<g data-tip="Инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_invoice&#10;Δ = -93м">
+<rect x="507.19526268497225" y="1023.0" width="97.80473731502775" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1035.0" font-size="11.5" fill="#333" text-anchor="end">sk_invoice</text>
+<text x="503.19526268497225" y="1035.0" font-size="10.5" fill="#333" text-anchor="end">-93м</text>
 </g>
-<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_cube&#10;Δ = -65м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="529.2171854282489" y="1045.0" width="75.78281457175115" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1057.0" font-size="11.5" fill="#333" text-anchor="end">pl_cube</text>
-<text x="525.2171854282489" y="1057.0" font-size="10.5" fill="#333" text-anchor="end">-65м</text>
+<g data-tip="Инвойс — Продажи розница (SD)&#10;msbi_reload_sd_invoice&#10;Δ = -97м">
+<rect x="503.67187090318737" y="1045.0" width="101.32812909681263" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1057.0" font-size="11.5" fill="#333" text-anchor="end">sd_invoice</text>
+<text x="499.67187090318737" y="1057.0" font-size="10.5" fill="#333" text-anchor="end">-97м</text>
 </g>
-<g data-tip="Факты — ОСВ (BS)&#10;msbi_reload_bs_facts&#10;Δ = -66м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="528.5178310769073" y="1067.0" width="76.48216892309267" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1079.0" font-size="11.5" fill="#333" text-anchor="end">bs_facts</text>
-<text x="524.5178310769073" y="1079.0" font-size="10.5" fill="#333" text-anchor="end">-66м</text>
+<g data-tip="Инвойс — Продажи Объектив (OB)&#10;msbi_reload_ob_invoice&#10;Δ = -98м">
+<rect x="501.6145180057797" y="1067.0" width="103.3854819942203" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1079.0" font-size="11.5" fill="#333" text-anchor="end">ob_invoice</text>
+<text x="497.6145180057797" y="1079.0" font-size="10.5" fill="#333" text-anchor="end">-98м</text>
 </g>
-<g data-tip="Инвойс — Продажи розница (SD)&#10;msbi_reload_sd_invoice&#10;Δ = -70м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="523.9137482639094" y="1089.0" width="81.08625173609062" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1101.0" font-size="11.5" fill="#333" text-anchor="end">sd_invoice</text>
-<text x="519.9137482639094" y="1101.0" font-size="10.5" fill="#333" text-anchor="end">-70м</text>
+<g data-tip="Инвойс — Продажи Братец Лис (PH)&#10;msbi_reload_ph_invoice&#10;Δ = -100м">
+<rect x="500.0400132373554" y="1089.0" width="104.95998676264458" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1101.0" font-size="11.5" fill="#333" text-anchor="end">ph_invoice</text>
+<text x="496.0400132373554" y="1101.0" font-size="10.5" fill="#333" text-anchor="end">-100м</text>
 </g>
-<g data-tip="Инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_invoice&#10;Δ = -74м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="518.571458080051" y="1111.0" width="86.428541919949" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1123.0" font-size="11.5" fill="#333" text-anchor="end">sk_invoice</text>
-<text x="514.571458080051" y="1123.0" font-size="10.5" fill="#333" text-anchor="end">-74м</text>
+<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_cube&#10;Δ = -105м">
+<rect x="495.22552754546274" y="1111.0" width="109.77447245453726" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1123.0" font-size="11.5" fill="#333" text-anchor="end">pl_cube</text>
+<text x="491.22552754546274" y="1123.0" font-size="10.5" fill="#333" text-anchor="end">-105м</text>
 </g>
-<g data-tip="Инвойс — Продажи Братец Лис (PH)&#10;msbi_reload_ph_invoice&#10;Δ = -74м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="518.309200198298" y="1133.0" width="86.69079980170204" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1145.0" font-size="11.5" fill="#333" text-anchor="end">ph_invoice</text>
-<text x="514.309200198298" y="1145.0" font-size="10.5" fill="#333" text-anchor="end">-74м</text>
+<g data-tip="Факты — ОСВ (BS)&#10;msbi_reload_bs_facts&#10;Δ = -117м">
+<rect x="481.95070289790374" y="1133.0" width="123.04929710209626" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1145.0" font-size="11.5" fill="#333" text-anchor="end">bs_facts</text>
+<text x="477.95070289790374" y="1145.0" font-size="10.5" fill="#333" text-anchor="end">-117м</text>
 </g>
-<g data-tip="Инвойс — Продажи Объектив (OB)&#10;msbi_reload_ob_invoice&#10;Δ = -76м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="516.6288071041025" y="1155.0" width="88.37119289589748" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1167.0" font-size="11.5" fill="#333" text-anchor="end">ob_invoice</text>
-<text x="512.6288071041025" y="1167.0" font-size="10.5" fill="#333" text-anchor="end">-76м</text>
+<g data-tip="Куб — Продажи розница (SD)&#10;msbi_reload_sd_cube&#10;Δ = -134м">
+<rect x="464.3722318833186" y="1155.0" width="140.6277681166814" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1167.0" font-size="11.5" fill="#333" text-anchor="end">sd_cube</text>
+<text x="460.3722318833186" y="1167.0" font-size="10.5" fill="#333" text-anchor="end">-134м</text>
 </g>
-<g data-tip="Куб — ОСВ (BS)&#10;msbi_reload_bs_cube&#10;Δ = -88м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="502.9428309785453" y="1177.0" width="102.05716902145468" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1189.0" font-size="11.5" fill="#333" text-anchor="end">bs_cube</text>
-<text x="498.9428309785453" y="1189.0" font-size="10.5" fill="#333" text-anchor="end">-88м</text>
+<g data-tip="Куб — Кредиторская задолженность (AP)&#10;msbi_reload_ap_cube&#10;Δ = -135м">
+<rect x="463.2070983546846" y="1177.0" width="141.7929016453154" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1189.0" font-size="11.5" fill="#333" text-anchor="end">ap_cube</text>
+<text x="459.2070983546846" y="1189.0" font-size="10.5" fill="#333" text-anchor="end">-135м</text>
 </g>
-<g data-tip="Куб — Продажи розница (SD)&#10;msbi_reload_sd_cube&#10;Δ = -99м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="489.60653202865876" y="1199.0" width="115.39346797134124" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1211.0" font-size="11.5" fill="#333" text-anchor="end">sd_cube</text>
-<text x="485.60653202865876" y="1211.0" font-size="10.5" fill="#333" text-anchor="end">-99м</text>
+<g data-tip="Куб — ОСВ (BS)&#10;msbi_reload_bs_cube&#10;Δ = -145м">
+<rect x="452.3045275582182" y="1199.0" width="152.69547244178182" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1211.0" font-size="11.5" fill="#333" text-anchor="end">bs_cube</text>
+<text x="448.3045275582182" y="1211.0" font-size="10.5" fill="#333" text-anchor="end">-145м</text>
 </g>
-<g data-tip="Факты — БДР (PL)&#10;msbi_reload_pl_facts&#10;Δ = -171м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="405.82970869087956" y="1221.0" width="199.17029130912044" height="16.0" fill="#59a14f" rx="2"/>
+<g data-tip="Факты — БДР (PL)&#10;msbi_reload_pl_facts&#10;Δ = -201м">
+<rect x="394.16681370902495" y="1221.0" width="210.83318629097505" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="1233.0" font-size="11.5" fill="#333" text-anchor="end">pl_facts</text>
-<text x="401.82970869087956" y="1233.0" font-size="10.5" fill="#333" text-anchor="end">-171м</text>
+<text x="390.16681370902495" y="1233.0" font-size="10.5" fill="#333" text-anchor="end">-201м</text>
 </g>
-<g data-tip="Msk_facts — БДР (PL)&#10;msbi_reload_pl_msk_facts&#10;Δ = -295м&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="261.27704957055124" y="1243.0" width="343.72295042944876" height="16.0" fill="#59a14f" rx="2"/>
+<g data-tip="Msk_facts — БДР (PL)&#10;msbi_reload_pl_msk_facts&#10;Δ = -325м">
+<rect x="263.9902583551949" y="1243.0" width="341.0097416448051" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="1255.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_facts</text>
-<text x="257.27704957055124" y="1255.0" font-size="10.5" fill="#333" text-anchor="end">-295м</text>
+<text x="259.9902583551949" y="1255.0" font-size="10.5" fill="#333" text-anchor="end">-325м</text>
 </g>
-<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_msk_cube&#10;Δ = -303м&#10;28.10 старт 00:00:00 (см. таблицу)">
+<g data-tip="Msk_cube — БДР (PL)&#10;msbi_reload_pl_msk_cube&#10;Δ = -336м">
 <rect x="252.3214285714286" y="1265.0" width="352.6785714285714" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="1277.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_cube</text>
-<text x="248.3214285714286" y="1277.0" font-size="10.5" fill="#333" text-anchor="end">-303м</text>
+<text x="248.3214285714286" y="1277.0" font-size="10.5" fill="#333" text-anchor="end">-336м</text>
 </g>
 <text x="210.0" y="1298.0" font-size="11" fill="#888">← раньше/короче</text>
 <text x="1000.0" y="1298.0" font-size="11" fill="#888" text-anchor="end">позже/дольше →</text>
 <text x="605.0" y="1298.0" font-size="11" fill="#888" text-anchor="middle">0</text>
 </svg></div>
-    <div class="panel"><h3>Изменение длительности (28.10 минус среднее по 03.10/05.10)</h3><svg viewBox="0 0 1000 1310.0" width="100%" class="chart-svg" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+    <div class="panel"><h3>Изменение длительности (28.10 минус среднее за сентябрь 2026)</h3><svg viewBox="0 0 1000 1310.0" width="100%" class="chart-svg" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
 <line x1="605.0" y1="8.0" x2="605.0" y2="1284.0" stroke="#555" stroke-width="1.2"/>
-<line x1="618.6205813905252" y1="8.0" x2="618.6205813905252" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
-<line x1="591.3794186094748" y1="8.0" x2="591.3794186094748" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
-<g data-tip="Куб — Продажи Строители (SK)&#10;msbi_reload_sk_cube&#10;Δ = +9м 38с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="11.0" width="26.23748577009144" height="16.0" fill="#e15759" rx="2"/>
+<line x1="618.7890418834972" y1="8.0" x2="618.7890418834972" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
+<line x1="591.2109581165028" y1="8.0" x2="591.2109581165028" y2="1284.0" stroke="#bbb" stroke-dasharray="3 3" stroke-width="1"/>
+<g data-tip="Куб — Продажи Строители (SK)&#10;msbi_reload_sk_cube&#10;Δ = +9м 34с">
+<rect x="605.0" y="11.0" width="26.399771206988135" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="23.0" font-size="11.5" fill="#333" text-anchor="end">sk_cube</text>
-<text x="635.2374857700914" y="23.0" font-size="10.5" fill="#333" text-anchor="start">+9м 38с</text>
+<text x="635.3997712069881" y="23.0" font-size="10.5" fill="#333" text-anchor="start">+9м 34с</text>
 </g>
-<g data-tip="Куб — Продажи Братец Лис (PH)&#10;msbi_reload_ph_cube&#10;Δ = +37м 47с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="33.0" width="102.94090939105126" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="45.0" font-size="11.5" fill="#333" text-anchor="end">ph_cube</text>
-<text x="711.9409093910513" y="45.0" font-size="10.5" fill="#333" text-anchor="start">+37м 47с</text>
+<g data-tip="Куб — Запасы (ST)&#10;msbi_reload_st_cube&#10;Δ = +3м 15с">
+<rect x="605.0" y="33.0" width="8.970283456559287" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="45.0" font-size="11.5" fill="#333" text-anchor="end">st_cube</text>
+<text x="617.9702834565593" y="45.0" font-size="10.5" fill="#333" text-anchor="start">+3м 15с</text>
 </g>
-<g data-tip="Куб — Запасы (ST)&#10;msbi_reload_st_cube&#10;Δ = -3м 23с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="598.5012284593412" y="55.0" width="6.498771540658822" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="67.0" font-size="11.5" fill="#333" text-anchor="end">st_cube</text>
-<text x="594.5012284593412" y="67.0" font-size="10.5" fill="#333" text-anchor="end">-3м 23с</text>
+<g data-tip="Куб — Продажи Братец Лис (PH)&#10;msbi_reload_ph_cube&#10;Δ = +25м 54с">
+<rect x="605.0" y="55.0" width="71.44472578219074" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="67.0" font-size="11.5" fill="#333" text-anchor="end">ph_cube</text>
+<text x="680.4447257821907" y="67.0" font-size="10.5" fill="#333" text-anchor="start">+25м 54с</text>
 </g>
-<g data-tip="Куб — Платежный баланс (PB)&#10;msbi_reload_pb_cube&#10;Δ = -10с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.5512893554177" y="77.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="89.0" font-size="11.5" fill="#333" text-anchor="end">pb_cube</text>
-<text x="600.5512893554177" y="89.0" font-size="10.5" fill="#333" text-anchor="end">-10с</text>
+<g data-tip="Факты — Платежный баланс (PB)&#10;msbi_reload_pb_facts&#10;Δ = -2м 26с">
+<rect x="601.0668800184427" y="77.0" width="3.9331199815572973" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="89.0" font-size="11.5" fill="#333" text-anchor="end">pb_facts</text>
+<text x="597.0668800184427" y="89.0" font-size="10.5" fill="#333" text-anchor="end">-2м 26с</text>
 </g>
-<g data-tip="Факты — Платежный баланс (PB)&#10;msbi_reload_pb_facts&#10;Δ = +12с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="99.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="111.0" font-size="11.5" fill="#333" text-anchor="end">pb_facts</text>
-<text x="609.5621838670536" y="111.0" font-size="10.5" fill="#333" text-anchor="start">+12с</text>
+<g data-tip="Факты — Продажи дистрибуции (TV)&#10;msbi_reload_tv_facts&#10;Δ = -4м 38с">
+<rect x="594.9655988070984" y="99.0" width="10.034401192901555" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="111.0" font-size="11.5" fill="#333" text-anchor="end">tv_facts</text>
+<text x="590.9655988070984" y="111.0" font-size="10.5" fill="#333" text-anchor="end">-4м 38с</text>
 </g>
-<g data-tip="Измерения — ОСВ (BS)&#10;msbi_reload_bs_dims&#10;Δ = -25с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.8432530792967" y="121.0" width="1.1567469207033128" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="133.0" font-size="11.5" fill="#333" text-anchor="end">bs_dims</text>
-<text x="599.8432530792967" y="133.0" font-size="10.5" fill="#333" text-anchor="end">-25с</text>
+<g data-tip="Измерения — Платежный баланс (PB)&#10;msbi_reload_pb_dims&#10;Δ = -49с">
+<rect x="602.7509559276023" y="121.0" width="2.249044072397737" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="133.0" font-size="11.5" fill="#333" text-anchor="end">pb_dims</text>
+<text x="598.7509559276023" y="133.0" font-size="10.5" fill="#333" text-anchor="end">-49с</text>
 </g>
-<g data-tip="Измерения — Кредиторская задолженность (AP)&#10;msbi_reload_ap_dims&#10;Δ = -26с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.8358755594894" y="143.0" width="1.1641244405105908" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="155.0" font-size="11.5" fill="#333" text-anchor="end">ap_dims</text>
-<text x="599.8358755594894" y="155.0" font-size="10.5" fill="#333" text-anchor="end">-26с</text>
+<g data-tip="Измерения — Планы продаж (SP)&#10;msbi_reload_sp_dims&#10;Δ = -2м 07с">
+<rect x="601.9199937451345" y="143.0" width="3.0800062548654523" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="155.0" font-size="11.5" fill="#333" text-anchor="end">sp_dims</text>
+<text x="597.9199937451345" y="155.0" font-size="10.5" fill="#333" text-anchor="end">-2м 07с</text>
 </g>
-<g data-tip="Измерения — Запасы (ST)&#10;msbi_reload_st_dims&#10;Δ = +1м 27с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="165.0" width="3.955908697703535" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="177.0" font-size="11.5" fill="#333" text-anchor="end">st_dims</text>
-<text x="612.9559086977035" y="177.0" font-size="10.5" fill="#333" text-anchor="start">+1м 27с</text>
+<g data-tip="Измерения — Кредиторская задолженность (AP)&#10;msbi_reload_ap_dims&#10;Δ = -35с">
+<rect x="603.4051521075625" y="165.0" width="1.5948478924375422" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="177.0" font-size="11.5" fill="#333" text-anchor="end">ap_dims</text>
+<text x="599.4051521075625" y="177.0" font-size="10.5" fill="#333" text-anchor="end">-35с</text>
 </g>
-<g data-tip="Измерения — Платежный баланс (PB)&#10;msbi_reload_pb_dims&#10;Δ = -22с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.002417586287" y="187.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="199.0" font-size="11.5" fill="#333" text-anchor="end">pb_dims</text>
-<text x="600.002417586287" y="199.0" font-size="10.5" fill="#333" text-anchor="end">-22с</text>
+<g data-tip="Измерения — Дебиторская задолженность (AR)&#10;msbi_reload_ar_dims&#10;Δ = -6с">
+<rect x="604.7029345351691" y="187.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="199.0" font-size="11.5" fill="#333" text-anchor="end">ar_dims</text>
+<text x="600.7029345351691" y="199.0" font-size="10.5" fill="#333" text-anchor="end">-6с</text>
 </g>
-<g data-tip="Измерения — Планы продаж (SP)&#10;msbi_reload_sp_dims&#10;Δ = -2м 38с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="600.5351206858348" y="209.0" width="4.4648793141651595" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="221.0" font-size="11.5" fill="#333" text-anchor="end">sp_dims</text>
-<text x="596.5351206858348" y="221.0" font-size="10.5" fill="#333" text-anchor="end">-2м 38с</text>
+<g data-tip="Измерения — Продажи розница (SD)&#10;msbi_reload_sd_dims&#10;Δ = +3м 07с">
+<rect x="605.0" y="209.0" width="8.616881114501439" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="221.0" font-size="11.5" fill="#333" text-anchor="end">sd_dims</text>
+<text x="617.6168811145014" y="221.0" font-size="10.5" fill="#333" text-anchor="start">+3м 07с</text>
 </g>
-<g data-tip="Измерения — Продажи розница (SD)&#10;msbi_reload_sd_dims&#10;Δ = +4м 03с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="231.0" width="11.018175018271904" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="243.0" font-size="11.5" fill="#333" text-anchor="end">sd_dims</text>
-<text x="620.0181750182719" y="243.0" font-size="10.5" fill="#333" text-anchor="start">+4м 03с</text>
+<g data-tip="Измерения — Запасы (ST)&#10;msbi_reload_st_dims&#10;Δ = +13с">
+<rect x="605.0" y="231.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="243.0" font-size="11.5" fill="#333" text-anchor="end">st_dims</text>
+<text x="609.6024264172589" y="243.0" font-size="10.5" fill="#333" text-anchor="start">+13с</text>
 </g>
-<g data-tip="Измерения — Продажи дистрибуции (TV)&#10;msbi_reload_tv_dims&#10;Δ = +37с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="253.0" width="1.665011491627638" height="16.0" fill="#e15759" rx="2"/>
+<g data-tip="Измерения — Продажи дистрибуции (TV)&#10;msbi_reload_tv_dims&#10;Δ = +48с">
+<rect x="605.0" y="253.0" width="2.1906255554445124" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="265.0" font-size="11.5" fill="#333" text-anchor="end">tv_dims</text>
-<text x="610.6650114916276" y="265.0" font-size="10.5" fill="#333" text-anchor="start">+37с</text>
+<text x="611.1906255554445" y="265.0" font-size="10.5" fill="#333" text-anchor="start">+48с</text>
 </g>
-<g data-tip="Измерения — Продажи Братец Лис (PH)&#10;msbi_reload_ph_dims&#10;Δ = +16с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="275.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="287.0" font-size="11.5" fill="#333" text-anchor="end">ph_dims</text>
-<text x="609.7482486363738" y="287.0" font-size="10.5" fill="#333" text-anchor="start">+16с</text>
+<g data-tip="Измерения — ОСВ (BS)&#10;msbi_reload_bs_dims&#10;Δ = -2м 36с">
+<rect x="600.5774166957" y="275.0" width="4.422583304300019" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="287.0" font-size="11.5" fill="#333" text-anchor="end">bs_dims</text>
+<text x="596.5774166957" y="287.0" font-size="10.5" fill="#333" text-anchor="end">-2м 36с</text>
 </g>
-<g data-tip="Измерения — БДР (PL)&#10;msbi_reload_pl_dims&#10;Δ = -2м 56с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.7252900639521" y="297.0" width="5.274709936047884" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="309.0" font-size="11.5" fill="#333" text-anchor="end">pl_dims</text>
-<text x="595.7252900639521" y="309.0" font-size="10.5" fill="#333" text-anchor="end">-2м 56с</text>
+<g data-tip="Куб — Продажи дистрибуции (TV)&#10;msbi_reload_tv_cube&#10;Δ = -56с">
+<rect x="602.4068144899272" y="297.0" width="2.5931855100727716" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="309.0" font-size="11.5" fill="#333" text-anchor="end">tv_cube</text>
+<text x="598.4068144899272" y="309.0" font-size="10.5" fill="#333" text-anchor="end">-56с</text>
 </g>
-<g data-tip="Msk_dims — БДР (PL)&#10;msbi_reload_pl_msk_dims&#10;Δ = -2м 57с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.6983002235987" y="319.0" width="5.3016997764012785" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="331.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_dims</text>
-<text x="595.6983002235987" y="331.0" font-size="10.5" fill="#333" text-anchor="end">-2м 57с</text>
+<g data-tip="Измерения — БДР (PL)&#10;msbi_reload_pl_dims&#10;Δ = -2м 07с">
+<rect x="601.9381415491209" y="319.0" width="3.061858450879072" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="331.0" font-size="11.5" fill="#333" text-anchor="end">pl_dims</text>
+<text x="597.9381415491209" y="331.0" font-size="10.5" fill="#333" text-anchor="end">-2м 07с</text>
 </g>
-<g data-tip="Измерения — Продажи Объектив (OB)&#10;msbi_reload_ob_dims&#10;Δ = -2м 29с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="600.9517290956428" y="341.0" width="4.048270904357196" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="353.0" font-size="11.5" fill="#333" text-anchor="end">ob_dims</text>
-<text x="596.9517290956428" y="353.0" font-size="10.5" fill="#333" text-anchor="end">-2м 29с</text>
+<g data-tip="Msk_dims — БДР (PL)&#10;msbi_reload_pl_msk_dims&#10;Δ = -1м 00с">
+<rect x="602.239233230328" y="341.0" width="2.7607667696720455" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="353.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_dims</text>
+<text x="598.239233230328" y="353.0" font-size="10.5" fill="#333" text-anchor="end">-1м 00с</text>
 </g>
-<g data-tip="Измерения — Продажи Строители (SK)&#10;msbi_reload_sk_dims&#10;Δ = +1м 33с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="363.0" width="4.212172990069689" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="375.0" font-size="11.5" fill="#333" text-anchor="end">sk_dims</text>
-<text x="613.2121729900697" y="375.0" font-size="10.5" fill="#333" text-anchor="start">+1м 33с</text>
+<g data-tip="Измерения — Транспортная логистика (TL)&#10;msbi_reload_tl_dims&#10;Δ = +1м 58с">
+<rect x="605.0" y="363.0" width="5.427229270706562" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="375.0" font-size="11.5" fill="#333" text-anchor="end">tl_dims</text>
+<text x="614.4272292707066" y="375.0" font-size="10.5" fill="#333" text-anchor="start">+1м 58с</text>
 </g>
-<g data-tip="Измерения — Транспортная логистика (TL)&#10;msbi_reload_tl_dims&#10;Δ = +2м 29с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="385.0" width="6.744402971564455" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="397.0" font-size="11.5" fill="#333" text-anchor="end">tl_dims</text>
-<text x="615.7444029715645" y="397.0" font-size="10.5" fill="#333" text-anchor="start">+2м 29с</text>
+<g data-tip="Измерения — Продажи Братец Лис (PH)&#10;msbi_reload_ph_dims&#10;Δ = +7с">
+<rect x="605.0" y="385.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="397.0" font-size="11.5" fill="#333" text-anchor="end">ph_dims</text>
+<text x="609.3080686146557" y="397.0" font-size="10.5" fill="#333" text-anchor="start">+7с</text>
 </g>
-<g data-tip="Измерения — Дебиторская задолженность (AR)&#10;msbi_reload_ar_dims&#10;Δ = -3м 13с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="598.9726295850601" y="407.0" width="6.027370414939924" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="419.0" font-size="11.5" fill="#333" text-anchor="end">ar_dims</text>
-<text x="594.9726295850601" y="419.0" font-size="10.5" fill="#333" text-anchor="end">-3м 13с</text>
+<g data-tip="Измерения — Продажи Объектив (OB)&#10;msbi_reload_ob_dims&#10;Δ = -2м 54с">
+<rect x="599.7738058591872" y="407.0" width="5.226194140812822" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="419.0" font-size="11.5" fill="#333" text-anchor="end">ob_dims</text>
+<text x="595.7738058591872" y="419.0" font-size="10.5" fill="#333" text-anchor="end">-2м 54с</text>
 </g>
-<g data-tip="Факты — Продажи Строители (SK)&#10;msbi_reload_sk_facts&#10;Δ = +84м 32с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="429.0" width="230.28239766856177" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="441.0" font-size="11.5" fill="#333" text-anchor="end">sk_facts</text>
-<text x="839.2823976685618" y="441.0" font-size="10.5" fill="#333" text-anchor="start">+84м 32с</text>
+<g data-tip="Измерения — Продажи Строители (SK)&#10;msbi_reload_sk_dims&#10;Δ = +43с">
+<rect x="605.0" y="429.0" width="1.9735576307720066" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="441.0" font-size="11.5" fill="#333" text-anchor="end">sk_dims</text>
+<text x="610.973557630772" y="441.0" font-size="10.5" fill="#333" text-anchor="start">+43с</text>
 </g>
-<g data-tip="Куб — Продажи дистрибуции (TV)&#10;msbi_reload_tv_cube&#10;Δ = -57с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="602.4302151017847" y="451.0" width="2.569784898215289" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="463.0" font-size="11.5" fill="#333" text-anchor="end">tv_cube</text>
-<text x="598.4302151017847" y="463.0" font-size="10.5" fill="#333" text-anchor="end">-57с</text>
+<g data-tip="Общее — Скоринг (SC)&#10;msbi_reload_sc_common&#10;Δ = -9м 50с">
+<rect x="580.6571244512654" y="451.0" width="24.342875548734582" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="463.0" font-size="11.5" fill="#333" text-anchor="end">sc_common</text>
+<text x="576.6571244512654" y="463.0" font-size="10.5" fill="#333" text-anchor="end">-9м 50с</text>
 </g>
-<g data-tip="Факты — Продажи Объектив (OB)&#10;msbi_reload_ob_facts&#10;Δ = +5м 37с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="473.0" width="15.306612503869246" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="485.0" font-size="11.5" fill="#333" text-anchor="end">ob_facts</text>
-<text x="624.3066125038692" y="485.0" font-size="10.5" fill="#333" text-anchor="start">+5м 37с</text>
+<g data-tip="Вчерашний инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_yesterday_invoice&#10;Δ = -23с">
+<rect x="603.9257362866399" y="473.0" width="1.0742637133600965" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="485.0" font-size="11.5" fill="#333" text-anchor="end">sk_yesterday_invoice</text>
+<text x="599.9257362866399" y="485.0" font-size="10.5" fill="#333" text-anchor="end">-23с</text>
 </g>
-<g data-tip="Факты — Продажи дистрибуции (TV)&#10;msbi_reload_tv_facts&#10;Δ = +1с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="495.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="507.0" font-size="11.5" fill="#333" text-anchor="end">tv_facts</text>
-<text x="609.0547058620036" y="507.0" font-size="10.5" fill="#333" text-anchor="start">+1с</text>
+<g data-tip="Факты — Планы продаж (SP)&#10;msbi_reload_sp_facts&#10;Δ = -3м 54с">
+<rect x="597.0116487863854" y="495.0" width="7.988351213614578" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="507.0" font-size="11.5" fill="#333" text-anchor="end">sp_facts</text>
+<text x="593.0116487863854" y="507.0" font-size="10.5" fill="#333" text-anchor="end">-3м 54с</text>
 </g>
-<g data-tip="Вчерашний инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_yesterday_invoice&#10;Δ = -3с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.8647606798493" y="517.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="529.0" font-size="11.5" fill="#333" text-anchor="end">sk_yesterday_invoice</text>
-<text x="600.8647606798493" y="529.0" font-size="10.5" fill="#333" text-anchor="end">-3с</text>
+<g data-tip="Куб — Планы продаж (SP)&#10;msbi_reload_sp_cube&#10;Δ = -23с">
+<rect x="603.9262489172536" y="517.0" width="1.073751082746412" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="529.0" font-size="11.5" fill="#333" text-anchor="end">sp_cube</text>
+<text x="599.9262489172536" y="529.0" font-size="10.5" fill="#333" text-anchor="end">-23с</text>
 </g>
-<g data-tip="Измерения — Web-аналитика (WA)&#10;msbi_reload_wa_dims&#10;Δ = +24м 13с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="539.0" width="65.9733427409019" height="16.0" fill="#e15759" rx="2"/>
+<g data-tip="Измерения — Web-аналитика (WA)&#10;msbi_reload_wa_dims&#10;Δ = +23м 20с">
+<rect x="605.0" y="539.0" width="64.3400027555042" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="551.0" font-size="11.5" fill="#333" text-anchor="end">wa_dims</text>
-<text x="674.9733427409019" y="551.0" font-size="10.5" fill="#333" text-anchor="start">+24м 13с</text>
+<text x="673.3400027555042" y="551.0" font-size="10.5" fill="#333" text-anchor="start">+23м 20с</text>
 </g>
-<g data-tip="Куб — Монитор дефицита (DM)&#10;msbi_reload_dm_cube&#10;Δ = +21м 31с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="561.0" width="58.59146028411237" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="573.0" font-size="11.5" fill="#333" text-anchor="end">dm_cube</text>
-<text x="667.5914602841124" y="573.0" font-size="10.5" fill="#333" text-anchor="start">+21м 31с</text>
+<g data-tip="Факты — Продажи Объектив (OB)&#10;msbi_reload_ob_facts&#10;Δ = +2м 07с">
+<rect x="605.0" y="561.0" width="5.834429375819013" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="573.0" font-size="11.5" fill="#333" text-anchor="end">ob_facts</text>
+<text x="614.834429375819" y="573.0" font-size="10.5" fill="#333" text-anchor="start">+2м 07с</text>
 </g>
-<g data-tip="Факты — Монитор дефицита (DM)&#10;msbi_reload_dm_facts&#10;Δ = +18с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="583.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="595.0" font-size="11.5" fill="#333" text-anchor="end">dm_facts</text>
-<text x="609.8383805182267" y="595.0" font-size="10.5" fill="#333" text-anchor="start">+18с</text>
+<g data-tip="Факты — Продажи Строители (SK)&#10;msbi_reload_sk_facts&#10;Δ = +65м 28с">
+<rect x="605.0" y="583.0" width="180.54252842999347" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="595.0" font-size="11.5" fill="#333" text-anchor="end">sk_facts</text>
+<text x="789.5425284299935" y="595.0" font-size="10.5" fill="#333" text-anchor="start">+65м 28с</text>
 </g>
-<g data-tip="Общее — Скоринг (SC)&#10;msbi_reload_sc_common&#10;Δ = -9м 46с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="581.0989306244578" y="605.0" width="23.901069375542193" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="617.0" font-size="11.5" fill="#333" text-anchor="end">sc_common</text>
-<text x="577.0989306244578" y="617.0" font-size="10.5" fill="#333" text-anchor="end">-9м 46с</text>
+<g data-tip="Куб — Платежный баланс (PB)&#10;msbi_reload_pb_cube&#10;Δ = -38с">
+<rect x="603.2394807221909" y="605.0" width="1.7605192778090668" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="617.0" font-size="11.5" fill="#333" text-anchor="end">pb_cube</text>
+<text x="599.2394807221909" y="617.0" font-size="10.5" fill="#333" text-anchor="end">-38с</text>
 </g>
-<g data-tip="Факты — Планы продаж (SP)&#10;msbi_reload_sp_facts&#10;Δ = -7м 17с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="587.8656556404321" y="627.0" width="17.134344359567876" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="639.0" font-size="11.5" fill="#333" text-anchor="end">sp_facts</text>
-<text x="583.8656556404321" y="639.0" font-size="10.5" fill="#333" text-anchor="end">-7м 17с</text>
+<g data-tip="Партиции — Скоринг (SC)&#10;msbi_reload_sc_partition&#10;Δ = -27м 18с">
+<rect x="532.4482258163573" y="627.0" width="72.55177418364269" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="639.0" font-size="11.5" fill="#333" text-anchor="end">sc_partition</text>
+<text x="528.4482258163573" y="639.0" font-size="10.5" fill="#333" text-anchor="end">-27м 18с</text>
 </g>
-<g data-tip="Факты — Транспортная логистика (TL)&#10;msbi_reload_tl_facts&#10;Δ = -5с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.7628557349666" y="649.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="661.0" font-size="11.5" fill="#333" text-anchor="end">tl_facts</text>
-<text x="600.7628557349666" y="661.0" font-size="10.5" fill="#333" text-anchor="end">-5с</text>
+<g data-tip="Факты — Продажи Братец Лис (PH)&#10;msbi_reload_ph_facts&#10;Δ = +81м 16с">
+<rect x="605.0" y="649.0" width="224.10066398249057" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="661.0" font-size="11.5" fill="#333" text-anchor="end">ph_facts</text>
+<text x="833.1006639824906" y="661.0" font-size="10.5" fill="#333" text-anchor="start">+81м 16с</text>
 </g>
-<g data-tip="Куб — Транспортная логистика (TL)&#10;msbi_reload_tl_cube&#10;Δ = -3с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.847859399823" y="671.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="683.0" font-size="11.5" fill="#333" text-anchor="end">tl_cube</text>
-<text x="600.847859399823" y="683.0" font-size="10.5" fill="#333" text-anchor="end">-3с</text>
+<g data-tip="Факты — Монитор дефицита (DM)&#10;msbi_reload_dm_facts&#10;Δ = -37м 59с">
+<rect x="503.0055776939122" y="671.0" width="101.99442230608781" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="683.0" font-size="11.5" fill="#333" text-anchor="end">dm_facts</text>
+<text x="499.0055776939122" y="683.0" font-size="10.5" fill="#333" text-anchor="end">-37м 59с</text>
 </g>
-<g data-tip="Куб — Планы продаж (SP)&#10;msbi_reload_sp_cube&#10;Δ = -32с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.5262478723223" y="693.0" width="1.4737521276776988" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="705.0" font-size="11.5" fill="#333" text-anchor="end">sp_cube</text>
-<text x="599.5262478723223" y="705.0" font-size="10.5" fill="#333" text-anchor="end">-32с</text>
+<g data-tip="Факты — Web-аналитика (WA)&#10;msbi_reload_wa_facts&#10;Δ = -2м 48с">
+<rect x="600.0170919003892" y="693.0" width="4.982908099610768" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="705.0" font-size="11.5" fill="#333" text-anchor="end">wa_facts</text>
+<text x="596.0170919003892" y="705.0" font-size="10.5" fill="#333" text-anchor="end">-2м 48с</text>
 </g>
-<g data-tip="Партиции — Скоринг (SC)&#10;msbi_reload_sc_partition&#10;Δ = -20м 33с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="551.7393061534908" y="715.0" width="53.260693846509184" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="727.0" font-size="11.5" fill="#333" text-anchor="end">sc_partition</text>
-<text x="547.7393061534908" y="727.0" font-size="10.5" fill="#333" text-anchor="end">-20м 33с</text>
+<g data-tip="Куб — Web-аналитика (WA)&#10;msbi_reload_wa_cube&#10;Δ = +33с">
+<rect x="605.0" y="715.0" width="1.4964746154304294" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="727.0" font-size="11.5" fill="#333" text-anchor="end">wa_cube</text>
+<text x="610.4964746154304" y="727.0" font-size="10.5" fill="#333" text-anchor="start">+33с</text>
 </g>
-<g data-tip="Факты — Запасы (ST)&#10;msbi_reload_st_facts&#10;Δ = +85м 06с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="737.0" width="231.80407042941772" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="749.0" font-size="11.5" fill="#333" text-anchor="end">st_facts</text>
-<text x="840.8040704294177" y="749.0" font-size="10.5" fill="#333" text-anchor="start">+85м 06с</text>
+<g data-tip="Куб — Продажи Объектив (OB)&#10;msbi_reload_ob_cube&#10;Δ = -2м 23с">
+<rect x="601.1742908173541" y="737.0" width="3.8257091826459373" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="749.0" font-size="11.5" fill="#333" text-anchor="end">ob_cube</text>
+<text x="597.1742908173541" y="749.0" font-size="10.5" fill="#333" text-anchor="end">-2м 23с</text>
 </g>
-<g data-tip="Факты — Кредиторская задолженность (AP)&#10;msbi_reload_ap_facts&#10;Δ = -2м 31с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="600.8489143867271" y="759.0" width="4.151085613272926" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="771.0" font-size="11.5" fill="#333" text-anchor="end">ap_facts</text>
-<text x="596.8489143867271" y="771.0" font-size="10.5" fill="#333" text-anchor="end">-2м 31с</text>
+<g data-tip="Факты — Транспортная логистика (TL)&#10;msbi_reload_tl_facts&#10;Δ = -3м 20с">
+<rect x="598.5645687068757" y="759.0" width="6.4354312931243385" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="771.0" font-size="11.5" fill="#333" text-anchor="end">tl_facts</text>
+<text x="594.5645687068757" y="771.0" font-size="10.5" fill="#333" text-anchor="end">-3м 20с</text>
 </g>
-<g data-tip="Факты — Web-аналитика (WA)&#10;msbi_reload_wa_facts&#10;Δ = -3м 09с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.1581285781302" y="781.0" width="5.841871421869769" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="793.0" font-size="11.5" fill="#333" text-anchor="end">wa_facts</text>
-<text x="595.1581285781302" y="793.0" font-size="10.5" fill="#333" text-anchor="end">-3м 09с</text>
+<g data-tip="Куб — Транспортная логистика (TL)&#10;msbi_reload_tl_cube&#10;Δ = -21с">
+<rect x="604.0204919165818" y="781.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="793.0" font-size="11.5" fill="#333" text-anchor="end">tl_cube</text>
+<text x="600.0204919165818" y="793.0" font-size="10.5" fill="#333" text-anchor="end">-21с</text>
 </g>
-<g data-tip="Куб — Кредиторская задолженность (AP)&#10;msbi_reload_ap_cube&#10;Δ = -12с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.4523180340558" y="803.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="815.0" font-size="11.5" fill="#333" text-anchor="end">ap_cube</text>
-<text x="600.4523180340558" y="815.0" font-size="10.5" fill="#333" text-anchor="end">-12с</text>
+<g data-tip="Остатки — Скоринг (SC)&#10;msbi_reload_sc_stock&#10;Δ = -20м 06с">
+<rect x="552.3360798913227" y="803.0" width="52.6639201086773" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="815.0" font-size="11.5" fill="#333" text-anchor="end">sc_stock</text>
+<text x="548.3360798913227" y="815.0" font-size="10.5" fill="#333" text-anchor="end">-20м 06с</text>
 </g>
-<g data-tip="Факты — Продажи Братец Лис (PH)&#10;msbi_reload_ph_facts&#10;Δ = +96м 31с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="825.0" width="262.91746168710597" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="837.0" font-size="11.5" fill="#333" text-anchor="end">ph_facts</text>
-<text x="871.917461687106" y="837.0" font-size="10.5" fill="#333" text-anchor="start">+96м 31с</text>
+<g data-tip="Факты — Запасы (ST)&#10;msbi_reload_st_facts&#10;Δ = +75м 16с">
+<rect x="605.0" y="825.0" width="207.59252659527215" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="837.0" font-size="11.5" fill="#333" text-anchor="end">st_facts</text>
+<text x="816.5925265952721" y="837.0" font-size="10.5" fill="#333" text-anchor="start">+75м 16с</text>
 </g>
-<g data-tip="Куб — Web-аналитика (WA)&#10;msbi_reload_wa_cube&#10;Δ = +25с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="847.0" width="1.1471193035513352" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="859.0" font-size="11.5" fill="#333" text-anchor="end">wa_cube</text>
-<text x="610.1471193035513" y="859.0" font-size="10.5" fill="#333" text-anchor="start">+25с</text>
+<g data-tip="Остатки — Продажи розница (SD)&#10;msbi_reload_sd_stock&#10;Δ = -12м 42с">
+<rect x="572.7491798067549" y="847.0" width="32.25082019324509" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="859.0" font-size="11.5" fill="#333" text-anchor="end">sd_stock</text>
+<text x="568.7491798067549" y="859.0" font-size="10.5" fill="#333" text-anchor="end">-12м 42с</text>
 </g>
-<g data-tip="Куб — Продажи Объектив (OB)&#10;msbi_reload_ob_cube&#10;Δ = +38с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="869.0" width="1.7133256915050197" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="881.0" font-size="11.5" fill="#333" text-anchor="end">ob_cube</text>
-<text x="610.713325691505" y="881.0" font-size="10.5" fill="#333" text-anchor="start">+38с</text>
+<g data-tip="Факты — Дебиторская задолженность (AR)&#10;msbi_reload_ar_facts&#10;Δ = -2м 12с">
+<rect x="601.6825117874422" y="869.0" width="3.317488212557805" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="881.0" font-size="11.5" fill="#333" text-anchor="end">ar_facts</text>
+<text x="597.6825117874422" y="881.0" font-size="10.5" fill="#333" text-anchor="end">-2м 12с</text>
 </g>
-<g data-tip="Остатки — Скоринг (SC)&#10;msbi_reload_sc_stock&#10;Δ = +58с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="891.0" width="2.6157084136470985" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="903.0" font-size="11.5" fill="#333" text-anchor="end">sc_stock</text>
-<text x="611.6157084136471" y="903.0" font-size="10.5" fill="#333" text-anchor="start">+58с</text>
+<g data-tip="Куб — Монитор дефицита (DM)&#10;msbi_reload_dm_cube&#10;Δ = +17м 26с">
+<rect x="605.0" y="891.0" width="48.09159943828115" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="903.0" font-size="11.5" fill="#333" text-anchor="end">dm_cube</text>
+<text x="657.0915994382812" y="903.0" font-size="10.5" fill="#333" text-anchor="start">+17м 26с</text>
 </g>
-<g data-tip="Остатки — Продажи розница (SD)&#10;msbi_reload_sd_stock&#10;Δ = -37с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="603.3315516043691" y="913.0" width="1.6684483956308895" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="925.0" font-size="11.5" fill="#333" text-anchor="end">sd_stock</text>
-<text x="599.3315516043691" y="925.0" font-size="10.5" fill="#333" text-anchor="end">-37с</text>
+<g data-tip="Куб — Дебиторская задолженность (AR)&#10;msbi_reload_ar_cube&#10;Δ = -19с">
+<rect x="604.1120961069648" y="913.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="925.0" font-size="11.5" fill="#333" text-anchor="end">ar_cube</text>
+<text x="600.1120961069648" y="925.0" font-size="10.5" fill="#333" text-anchor="end">-19с</text>
 </g>
-<g data-tip="Куб — Скоринг (SC)&#10;msbi_reload_sc_cube&#10;Δ = +106м 52с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="935.0" width="291.1081969657803" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="947.0" font-size="11.5" fill="#333" text-anchor="end">sc_cube</text>
-<text x="900.1081969657803" y="947.0" font-size="10.5" fill="#333" text-anchor="start">+106м 52с</text>
+<g data-tip="Инвойс — Скоринг (SC)&#10;msbi_reload_sc_invoice&#10;Δ = +10м 36с">
+<rect x="605.0" y="935.0" width="29.226439714716662" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="947.0" font-size="11.5" fill="#333" text-anchor="end">sc_invoice</text>
+<text x="638.2264397147167" y="947.0" font-size="10.5" fill="#333" text-anchor="start">+10м 36с</text>
 </g>
-<g data-tip="Инвойс — Скоринг (SC)&#10;msbi_reload_sc_invoice&#10;Δ = +11м 33с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="957.0" width="31.479143526616667" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="969.0" font-size="11.5" fill="#333" text-anchor="end">sc_invoice</text>
-<text x="640.4791435266167" y="969.0" font-size="10.5" fill="#333" text-anchor="start">+11м 33с</text>
+<g data-tip="Факты — Продажи розница (SD)&#10;msbi_reload_sd_facts&#10;Δ = -48м 48с">
+<rect x="473.157662046538" y="957.0" width="131.842337953462" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="969.0" font-size="11.5" fill="#333" text-anchor="end">sd_facts</text>
+<text x="469.157662046538" y="969.0" font-size="10.5" fill="#333" text-anchor="end">-48м 48с</text>
 </g>
-<g data-tip="Факты — Продажи розница (SD)&#10;msbi_reload_sd_facts&#10;Δ = -60м 20с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="443.358441796756" y="979.0" width="161.64155820324402" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="991.0" font-size="11.5" fill="#333" text-anchor="end">sd_facts</text>
-<text x="439.358441796756" y="991.0" font-size="10.5" fill="#333" text-anchor="end">-60м 20с</text>
+<g data-tip="Куб — Скоринг (SC)&#10;msbi_reload_sc_cube&#10;Δ = +109м 27с">
+<rect x="605.0" y="979.0" width="301.8579357364579" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="991.0" font-size="11.5" fill="#333" text-anchor="end">sc_cube</text>
+<text x="910.8579357364579" y="991.0" font-size="10.5" fill="#333" text-anchor="start">+109м 27с</text>
 </g>
-<g data-tip="Факты — Дебиторская задолженность (AR)&#10;msbi_reload_ar_facts&#10;Δ = -19с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.1492220512926" y="1001.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1013.0" font-size="11.5" fill="#333" text-anchor="end">ar_facts</text>
-<text x="600.1492220512926" y="1013.0" font-size="10.5" fill="#333" text-anchor="end">-19с</text>
+<g data-tip="Факты — Кредиторская задолженность (AP)&#10;msbi_reload_ap_facts&#10;Δ = -90м 43с">
+<rect x="357.56988440135393" y="1001.0" width="247.43011559864607" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1013.0" font-size="11.5" fill="#333" text-anchor="end">ap_facts</text>
+<text x="353.56988440135393" y="1013.0" font-size="10.5" fill="#333" text-anchor="end">-90м 43с</text>
 </g>
-<g data-tip="Куб — Дебиторская задолженность (AR)&#10;msbi_reload_ar_cube&#10;Δ = +35с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="1023.0" width="1.583422574628571" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="1035.0" font-size="11.5" fill="#333" text-anchor="end">ar_cube</text>
-<text x="610.5834225746286" y="1035.0" font-size="10.5" fill="#333" text-anchor="start">+35с</text>
+<g data-tip="Инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_invoice&#10;Δ = -12м 14с">
+<rect x="574.0001665467754" y="1023.0" width="30.999833453224596" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1035.0" font-size="11.5" fill="#333" text-anchor="end">sk_invoice</text>
+<text x="570.0001665467754" y="1035.0" font-size="10.5" fill="#333" text-anchor="end">-12м 14с</text>
 </g>
-<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_cube&#10;Δ = -2с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.9004656946073" y="1045.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1057.0" font-size="11.5" fill="#333" text-anchor="end">pl_cube</text>
-<text x="600.9004656946073" y="1057.0" font-size="10.5" fill="#333" text-anchor="end">-2с</text>
+<g data-tip="Инвойс — Продажи розница (SD)&#10;msbi_reload_sd_invoice&#10;Δ = +3м 45с">
+<rect x="605.0" y="1045.0" width="10.347828229233187" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="1057.0" font-size="11.5" fill="#333" text-anchor="end">sd_invoice</text>
+<text x="619.3478282292332" y="1057.0" font-size="10.5" fill="#333" text-anchor="start">+3м 45с</text>
 </g>
-<g data-tip="Факты — ОСВ (BS)&#10;msbi_reload_bs_facts&#10;Δ = -22м 00с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="545.0627831653635" y="1067.0" width="59.9372168346365" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1079.0" font-size="11.5" fill="#333" text-anchor="end">bs_facts</text>
-<text x="541.0627831653635" y="1079.0" font-size="10.5" fill="#333" text-anchor="end">-22м 00с</text>
+<g data-tip="Инвойс — Продажи Объектив (OB)&#10;msbi_reload_ob_invoice&#10;Δ = -2м 26с">
+<rect x="601.0273162696532" y="1067.0" width="3.97268373034683" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1079.0" font-size="11.5" fill="#333" text-anchor="end">ob_invoice</text>
+<text x="597.0273162696532" y="1079.0" font-size="10.5" fill="#333" text-anchor="end">-2м 26с</text>
 </g>
-<g data-tip="Инвойс — Продажи розница (SD)&#10;msbi_reload_sd_invoice&#10;Δ = +9м 46с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="1089.0" width="26.62029087071494" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="1101.0" font-size="11.5" fill="#333" text-anchor="end">sd_invoice</text>
-<text x="635.6202908707149" y="1101.0" font-size="10.5" fill="#333" text-anchor="start">+9м 46с</text>
+<g data-tip="Инвойс — Продажи Братец Лис (PH)&#10;msbi_reload_ph_invoice&#10;Δ = -3м 34с">
+<rect x="597.9196811873467" y="1089.0" width="7.080318812653331" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1101.0" font-size="11.5" fill="#333" text-anchor="end">ph_invoice</text>
+<text x="593.9196811873467" y="1101.0" font-size="10.5" fill="#333" text-anchor="end">-3м 34с</text>
 </g>
-<g data-tip="Инвойс — Продажи Строители (SK)&#10;msbi_reload_sk_invoice&#10;Δ = -3м 16с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="598.8366423360842" y="1111.0" width="6.163357663915804" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1123.0" font-size="11.5" fill="#333" text-anchor="end">sk_invoice</text>
-<text x="594.8366423360842" y="1123.0" font-size="10.5" fill="#333" text-anchor="end">-3м 16с</text>
+<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_cube&#10;Δ = -14с">
+<rect x="604.3689760751076" y="1111.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1123.0" font-size="11.5" fill="#333" text-anchor="end">pl_cube</text>
+<text x="600.3689760751076" y="1123.0" font-size="10.5" fill="#333" text-anchor="end">-14с</text>
 </g>
-<g data-tip="Инвойс — Продажи Братец Лис (PH)&#10;msbi_reload_ph_invoice&#10;Δ = -3м 02с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="599.48345539281" y="1133.0" width="5.516544607189985" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1145.0" font-size="11.5" fill="#333" text-anchor="end">ph_invoice</text>
-<text x="595.48345539281" y="1145.0" font-size="10.5" fill="#333" text-anchor="end">-3м 02с</text>
+<g data-tip="Факты — ОСВ (BS)&#10;msbi_reload_bs_facts&#10;Δ = -34м 20с">
+<rect x="513.0543954679933" y="1133.0" width="91.94560453200666" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1145.0" font-size="11.5" fill="#333" text-anchor="end">bs_facts</text>
+<text x="509.05439546799334" y="1145.0" font-size="10.5" fill="#333" text-anchor="end">-34м 20с</text>
 </g>
-<g data-tip="Инвойс — Продажи Объектив (OB)&#10;msbi_reload_ob_invoice&#10;Δ = -18с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.1651510034152" y="1155.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1167.0" font-size="11.5" fill="#333" text-anchor="end">ob_invoice</text>
-<text x="600.1651510034152" y="1167.0" font-size="10.5" fill="#333" text-anchor="end">-18с</text>
+<g data-tip="Куб — Продажи розница (SD)&#10;msbi_reload_sd_cube&#10;Δ = +127м 53с">
+<rect x="605.0" y="1155.0" width="352.67857142857144" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="1167.0" font-size="11.5" fill="#333" text-anchor="end">sd_cube</text>
+<text x="961.6785714285714" y="1167.0" font-size="10.5" fill="#333" text-anchor="start">+127м 53с</text>
 </g>
-<g data-tip="Куб — ОСВ (BS)&#10;msbi_reload_bs_cube&#10;Δ = -4с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.815540938319" y="1177.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
-<text x="194.0" y="1189.0" font-size="11.5" fill="#333" text-anchor="end">bs_cube</text>
-<text x="600.815540938319" y="1189.0" font-size="10.5" fill="#333" text-anchor="end">-4с</text>
+<g data-tip="Куб — Кредиторская задолженность (AP)&#10;msbi_reload_ap_cube&#10;Δ = -11с">
+<rect x="604.4894154502426" y="1177.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<text x="194.0" y="1189.0" font-size="11.5" fill="#333" text-anchor="end">ap_cube</text>
+<text x="600.4894154502426" y="1189.0" font-size="10.5" fill="#333" text-anchor="end">-11с</text>
 </g>
-<g data-tip="Куб — Продажи розница (SD)&#10;msbi_reload_sd_cube&#10;Δ = +129м 28с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="1199.0" width="352.67857142857133" height="16.0" fill="#e15759" rx="2"/>
-<text x="194.0" y="1211.0" font-size="11.5" fill="#333" text-anchor="end">sd_cube</text>
-<text x="961.6785714285713" y="1211.0" font-size="10.5" fill="#333" text-anchor="start">+129м 28с</text>
+<g data-tip="Куб — ОСВ (BS)&#10;msbi_reload_bs_cube&#10;Δ = +7с">
+<rect x="605.0" y="1199.0" width="1.0" height="16.0" fill="#e15759" rx="2"/>
+<text x="194.0" y="1211.0" font-size="11.5" fill="#333" text-anchor="end">bs_cube</text>
+<text x="609.319088816929" y="1211.0" font-size="10.5" fill="#333" text-anchor="start">+7с</text>
 </g>
-<g data-tip="Факты — БДР (PL)&#10;msbi_reload_pl_facts&#10;Δ = +105м 52с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="605.0" y="1221.0" width="288.39593252306736" height="16.0" fill="#e15759" rx="2"/>
+<g data-tip="Факты — БДР (PL)&#10;msbi_reload_pl_facts&#10;Δ = +96м 16с">
+<rect x="605.0" y="1221.0" width="265.4865372143272" height="16.0" fill="#e15759" rx="2"/>
 <text x="194.0" y="1233.0" font-size="11.5" fill="#333" text-anchor="end">pl_facts</text>
-<text x="897.3959325230674" y="1233.0" font-size="10.5" fill="#333" text-anchor="start">+105м 52с</text>
+<text x="874.4865372143272" y="1233.0" font-size="10.5" fill="#333" text-anchor="start">+96м 16с</text>
 </g>
-<g data-tip="Msk_facts — БДР (PL)&#10;msbi_reload_pl_msk_facts&#10;Δ = -8м 41с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="584.0645419672088" y="1243.0" width="20.93545803279119" height="16.0" fill="#59a14f" rx="2"/>
+<g data-tip="Msk_facts — БДР (PL)&#10;msbi_reload_pl_msk_facts&#10;Δ = -12м 08с">
+<rect x="574.300526765274" y="1243.0" width="30.699473234726042" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="1255.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_facts</text>
-<text x="580.0645419672088" y="1255.0" font-size="10.5" fill="#333" text-anchor="end">-8м 41с</text>
+<text x="570.300526765274" y="1255.0" font-size="10.5" fill="#333" text-anchor="end">-12м 08с</text>
 </g>
-<g data-tip="Куб — БДР (PL)&#10;msbi_reload_pl_msk_cube&#10;Δ = -5с&#10;28.10 старт 00:00:00 (см. таблицу)">
-<rect x="604.7945517132001" y="1265.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
+<g data-tip="Msk_cube — БДР (PL)&#10;msbi_reload_pl_msk_cube&#10;Δ = -9с">
+<rect x="604.577223011797" y="1265.0" width="1.0" height="16.0" fill="#59a14f" rx="2"/>
 <text x="194.0" y="1277.0" font-size="11.5" fill="#333" text-anchor="end">pl_msk_cube</text>
-<text x="600.7945517132001" y="1277.0" font-size="10.5" fill="#333" text-anchor="end">-5с</text>
+<text x="600.577223011797" y="1277.0" font-size="10.5" fill="#333" text-anchor="end">-9с</text>
 </g>
 <text x="210.0" y="1298.0" font-size="11" fill="#888">← раньше/короче</text>
 <text x="1000.0" y="1298.0" font-size="11" fill="#888" text-anchor="end">позже/дольше →</text>
 <text x="605.0" y="1298.0" font-size="11" fill="#888" text-anchor="middle">0</text>
 </svg></div>
     <div class="panel"><h3>Полная таблица</h3><div class="tablebox"><table>
-      <thead><tr><th>DAG</th><th>Бизнес</th><th>старт 03.10</th><th>старт 05.10</th><th>старт 28.10</th><th>Δ старт</th>
-      <th>длит. 03.10</th><th>длит. 05.10</th><th>длит. 28.10</th><th>Δ длит.</th><th>результат</th></tr></thead>
-      <tbody><tr><td class="dag">msbi_reload_sk_cube</td><td>Продажи Строители (SK)</td><td>05:28:33</td><td>05:19:02</td><td><b>06:49:14</b></td><td class="del">+85м</td><td>21м 54с</td><td>19м 57с</td><td><b>30м 33с</b></td><td class="del">+9м 38с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ph_cube</td><td>Продажи Братец Лис (PH)</td><td>05:36:45</td><td>05:42:21</td><td><b>07:04:42</b></td><td class="del">+85м</td><td>30м 12с</td><td>26м 03с</td><td><b>1ч 05м 55с</b></td><td class="del">+37м 47с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_st_cube</td><td>Запасы (ST)</td><td>07:22:52</td><td>06:47:14</td><td><b>08:22:02</b></td><td class="del">+77м</td><td>1ч 29м 25с</td><td>1ч 43м 24с</td><td><b>1ч 34м 01с</b></td><td>-3м 23с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pb_cube</td><td>Платежный баланс (PB)</td><td>02:18:43</td><td>02:19:01</td><td><b>02:48:22</b></td><td class="del">+29м</td><td>2м 41с</td><td>2м 41с</td><td><b>2м 31с</b></td><td>-10с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pb_facts</td><td>Платежный баланс (PB)</td><td>02:05:12</td><td>02:14:16</td><td><b>02:38:58</b></td><td class="del">+29м</td><td>13м 37с</td><td>4м 50с</td><td><b>9м 26с</b></td><td>+12с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_bs_dims</td><td>ОСВ (BS)</td><td>23:04:44</td><td>23:04:33</td><td><b>23:12:30</b></td><td>+8м</td><td>1м 59с</td><td>1м 49с</td><td><b>1м 29с</b></td><td>-25с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ap_dims</td><td>Кредиторская задолженность (AP)</td><td>23:04:44</td><td>23:04:33</td><td><b>23:12:23</b></td><td>+8м</td><td>0м 57с</td><td>1м 12с</td><td><b>0м 39с</b></td><td>-26с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_st_dims</td><td>Запасы (ST)</td><td>23:04:44</td><td>23:05:16</td><td><b>23:12:35</b></td><td>+8м</td><td>3м 24с</td><td>2м 44с</td><td><b>4м 31с</b></td><td>+1м 27с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pb_dims</td><td>Платежный баланс (PB)</td><td>23:04:48</td><td>23:05:25</td><td><b>23:12:42</b></td><td>+8м</td><td>1м 58с</td><td>1м 50с</td><td><b>1м 32с</b></td><td>-22с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sp_dims</td><td>Планы продаж (SP)</td><td>23:04:29</td><td>23:05:25</td><td><b>23:12:30</b></td><td>+8м</td><td>2м 18с</td><td>4м 15с</td><td><b>1м 38с</b></td><td>-2м 38с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sd_dims</td><td>Продажи розница (SD)</td><td>23:05:04</td><td>23:05:16</td><td><b>23:12:42</b></td><td>+8м</td><td>10м 00с</td><td>8м 59с</td><td><b>13м 32с</b></td><td>+4м 03с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_tv_dims</td><td>Продажи дистрибуции (TV)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:42</b></td><td>+7м</td><td>5м 09с</td><td>6м 20с</td><td><b>6м 21с</b></td><td>+37с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ph_dims</td><td>Продажи Братец Лис (PH)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:35</b></td><td>+7м</td><td>8м 40с</td><td>6м 10с</td><td><b>7м 42с</b></td><td>+16с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pl_dims</td><td>БДР (PL)</td><td>23:04:44</td><td>23:05:25</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 39с</td><td>3м 56с</td><td><b>0м 51с</b></td><td>-2м 56с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pl_msk_dims</td><td>БДР (PL)</td><td>23:04:44</td><td>23:05:25</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 20с</td><td>4м 20с</td><td><b>0м 54с</b></td><td>-2м 57с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ob_dims</td><td>Продажи Объектив (OB)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:30</b></td><td>+7м</td><td>3м 58с</td><td>3м 48с</td><td><b>2м 23с</b></td><td>-2м 29с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sk_dims</td><td>Продажи Строители (SK)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:30</b></td><td>+7м</td><td>4м 43с</td><td>4м 53с</td><td><b>6м 20с</b></td><td>+1м 33с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_tl_dims</td><td>Транспортная логистика (TL)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:30</b></td><td>+7м</td><td>5м 13с</td><td>5м 29с</td><td><b>7м 50с</b></td><td>+2м 29с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ar_dims</td><td>Дебиторская задолженность (AR)</td><td>23:05:04</td><td>23:05:25</td><td><b>23:12:23</b></td><td>+7м</td><td>4м 01с</td><td>4м 01с</td><td><b>1м 49с</b></td><td>-3м 13с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sk_facts</td><td>Продажи Строители (SK)</td><td>04:30:49</td><td>04:13:18</td><td><b>04:22:53</b></td><td>+1м</td><td>57м 48с</td><td>1ч 05м 51с</td><td><b>2ч 26м 22с</b></td><td class="del">+84м 32с</td><td>success (↻×2)</td></tr>
-<tr><td class="dag">msbi_reload_tv_cube</td><td>Продажи дистрибуции (TV)</td><td>03:04:52</td><td>03:44:35</td><td><b>03:24:46</b></td><td>0м</td><td>11м 11с</td><td>9м 25с</td><td><b>9м 21с</b></td><td>-57с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ob_facts</td><td>Продажи Объектив (OB)</td><td>02:42:28</td><td>03:03:33</td><td><b>02:53:03</b></td><td>0м</td><td>14м 19с</td><td>20м 51с</td><td><b>23м 12с</b></td><td class="del">+5м 37с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_tv_facts</td><td>Продажи дистрибуции (TV)</td><td>02:42:24</td><td>03:04:35</td><td><b>02:53:28</b></td><td>0м</td><td>22м 32с</td><td>40м 06с</td><td><b>31м 20с</b></td><td>+1с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sk_yesterday_invoice</td><td>Продажи Строители (SK)</td><td>22:30:08</td><td>22:30:06</td><td><b>22:30:02</b></td><td>0м</td><td>0м 19с</td><td>0м 17с</td><td><b>0м 15с</b></td><td>-3с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_wa_dims</td><td>Web-аналитика (WA)</td><td>06:16:18</td><td>06:16:19</td><td><b>06:15:51</b></td><td>0м</td><td>0м 25с</td><td>0м 21с</td><td><b>24м 37с</b></td><td class="del">+24м 13с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_dm_cube</td><td>Монитор дефицита (DM)</td><td>07:33:48</td><td>07:18:51</td><td><b>07:25:15</b></td><td>-1м</td><td>1ч 22м 21с</td><td>1ч 33м 42с</td><td><b>1ч 49м 32с</b></td><td class="del">+21м 31с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_dm_facts</td><td>Монитор дефицита (DM)</td><td>06:28:40</td><td>06:27:41</td><td><b>06:26:47</b></td><td>-1м</td><td>1ч 05м 11с</td><td>51м 14с</td><td><b>58м 31с</b></td><td>+18с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sc_common</td><td>Скоринг (SC)</td><td>03:06:54</td><td>03:06:45</td><td><b>03:05:22</b></td><td>-1м</td><td>47м 23с</td><td>41м 37с</td><td><b>35м 44с</b></td><td class="early">-9м 46с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sp_facts</td><td>Планы продаж (SP)</td><td>02:41:18</td><td>03:03:30</td><td><b>02:50:30</b></td><td>-2м</td><td>3м 16с</td><td>10м 50с</td><td><b>0м 45с</b></td><td class="early">-7м 17с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_tl_facts</td><td>Транспортная логистика (TL)</td><td>02:05:57</td><td>02:19:37</td><td><b>02:08:03</b></td><td>-5м</td><td>4м 51с</td><td>2м 40с</td><td><b>3м 40с</b></td><td>-5с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_tl_cube</td><td>Транспортная логистика (TL)</td><td>02:10:48</td><td>02:22:16</td><td><b>02:11:43</b></td><td>-5м</td><td>1м 45с</td><td>1м 44с</td><td><b>1м 41с</b></td><td>-3с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sp_cube</td><td>Планы продаж (SP)</td><td>02:44:24</td><td>03:14:09</td><td><b>02:51:13</b></td><td>-8м</td><td>0м 41с</td><td>0м 56с</td><td><b>0м 16с</b></td><td>-32с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sc_partition</td><td>Скоринг (SC)</td><td>04:30:23</td><td>04:13:48</td><td><b>04:13:56</b></td><td>-8м</td><td>20м 44с</td><td>44м 13с</td><td><b>12м 55с</b></td><td class="early">-20м 33с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_st_facts</td><td>Запасы (ST)</td><td>04:30:23</td><td>04:13:48</td><td><b>04:13:56</b></td><td>-8м</td><td>2ч 52м 33с</td><td>2ч 33м 29с</td><td><b>4ч 08м 07с</b></td><td class="del">+85м 06с</td><td>success (↻×2)</td></tr>
-<tr><td class="dag">msbi_reload_ap_facts</td><td>Кредиторская задолженность (AP)</td><td>05:47:00</td><td>05:40:26</td><td><b>05:34:45</b></td><td>-9м</td><td>2м 53с</td><td>7м 17с</td><td><b>3м 34с</b></td><td>-2м 31с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_wa_facts</td><td>Web-аналитика (WA)</td><td>07:56:42</td><td>07:54:18</td><td><b>07:45:12</b></td><td>-10м</td><td>7м 33с</td><td>1м 55с</td><td><b>2м 35с</b></td><td>-3м 09с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ap_cube</td><td>Кредиторская задолженность (AP)</td><td>05:49:53</td><td>05:47:37</td><td><b>05:38:15</b></td><td>-10м</td><td>0м 24с</td><td>0м 34с</td><td><b>0м 17с</b></td><td>-12с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ph_facts</td><td>Продажи Братец Лис (PH)</td><td>04:30:23</td><td>04:20:12</td><td><b>04:13:56</b></td><td>-11м</td><td>1ч 06м 20с</td><td>1ч 22м 12с</td><td><b>2ч 50м 47с</b></td><td class="del">+96м 31с</td><td>success (↻×2)</td></tr>
-<tr><td class="dag">msbi_reload_wa_cube</td><td>Web-аналитика (WA)</td><td>08:04:11</td><td>07:56:11</td><td><b>07:47:47</b></td><td>-12м</td><td>0м 19с</td><td>0м 31с</td><td><b>0м 50с</b></td><td>+25с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ob_cube</td><td>Продажи Объектив (OB)</td><td>03:19:30</td><td>03:40:52</td><td><b>03:16:15</b></td><td>-14м</td><td>20м 32с</td><td>19м 57с</td><td><b>20м 52с</b></td><td>+38с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sc_stock</td><td>Скоринг (SC)</td><td>01:52:45</td><td>01:33:48</td><td><b>01:26:40</b></td><td class="early">-17м</td><td>28м 49с</td><td>33м 40с</td><td><b>32м 12с</b></td><td>+58с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sd_stock</td><td>Продажи розница (SD)</td><td>01:52:45</td><td>01:33:48</td><td><b>01:26:40</b></td><td class="early">-17м</td><td>25м 35с</td><td>28м 13с</td><td><b>26м 17с</b></td><td>-37с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sc_cube</td><td>Скоринг (SC)</td><td>04:51:03</td><td>04:58:02</td><td><b>04:26:51</b></td><td class="early">-28м</td><td>1ч 08м 29с</td><td>1ч 02м 48с</td><td><b>2ч 52м 30с</b></td><td class="del">+106м 52с</td><td>success (↻×2)</td></tr>
-<tr><td class="dag">msbi_reload_sc_invoice</td><td>Скоринг (SC)</td><td>03:22:48</td><td>04:13:48</td><td><b>03:08:37</b></td><td class="early">-40м</td><td>45м 55с</td><td>23м 20с</td><td><b>46м 11с</b></td><td class="del">+11м 33с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sd_facts</td><td>Продажи розница (SD)</td><td>03:22:48</td><td>04:13:48</td><td><b>03:08:37</b></td><td class="early">-40м</td><td>1ч 59м 46с</td><td>2ч 28м 54с</td><td><b>1ч 15м 00с</b></td><td class="early">-60м 20с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ar_facts</td><td>Дебиторская задолженность (AR)</td><td>01:28:04</td><td>01:32:11</td><td><b>00:31:22</b></td><td class="early">-59м</td><td>6м 21с</td><td>6м 24с</td><td><b>6м 04с</b></td><td>-19с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ar_cube</td><td>Дебиторская задолженность (AR)</td><td>01:34:15</td><td>01:38:29</td><td><b>00:37:23</b></td><td class="early">-59м</td><td>9м 43с</td><td>10м 02с</td><td><b>10м 27с</b></td><td>+35с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pl_cube</td><td>БДР (PL)</td><td>08:35:51</td><td>08:58:46</td><td><b>07:42:18</b></td><td class="early">-65м</td><td>0м 24с</td><td>0м 15с</td><td><b>0м 17с</b></td><td>-2с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_bs_facts</td><td>ОСВ (BS)</td><td>05:51:25</td><td>05:35:34</td><td><b>04:37:52</b></td><td class="early">-66м</td><td>1ч 19м 57с</td><td>1ч 20м 00с</td><td><b>57м 58с</b></td><td class="early">-22м 00с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sd_invoice</td><td>Продажи розница (SD)</td><td>03:18:48</td><td>03:53:39</td><td><b>02:26:39</b></td><td class="early">-70м</td><td>1ч 03м 33с</td><td>51м 00с</td><td><b>1ч 07м 03с</b></td><td class="del">+9м 46с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sk_invoice</td><td>Продажи Строители (SK)</td><td>03:18:37</td><td>03:46:37</td><td><b>02:18:28</b></td><td class="early">-74м</td><td>4м 32с</td><td>4м 01с</td><td><b>2м 01с</b></td><td>-3м 16с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ph_invoice</td><td>Продажи Братец Лис (PH)</td><td>03:18:48</td><td>03:52:09</td><td><b>02:21:07</b></td><td class="early">-74м</td><td>4м 18с</td><td>3м 08с</td><td><b>1м 42с</b></td><td>-3м 02с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_ob_invoice</td><td>Продажи Объектив (OB)</td><td>03:18:54</td><td>03:40:22</td><td><b>02:13:48</b></td><td class="early">-76м</td><td>0м 41с</td><td>0м 30с</td><td><b>0м 17с</b></td><td>-18с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_bs_cube</td><td>ОСВ (BS)</td><td>07:11:18</td><td>06:55:30</td><td><b>05:35:51</b></td><td class="early">-88м</td><td>1м 26с</td><td>2м 51с</td><td><b>2м 04с</b></td><td>-4с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_sd_cube</td><td>Продажи розница (SD)</td><td>05:22:27</td><td>06:42:40</td><td><b>04:23:33</b></td><td class="early">-99м</td><td>1ч 07м 42с</td><td>1ч 17м 04с</td><td><b>3ч 21м 51с</b></td><td class="del">+129м 28с</td><td>✗ FAILED</td></tr>
-<tr><td class="dag">msbi_reload_pl_facts</td><td>БДР (PL)</td><td>07:37:38</td><td>08:05:10</td><td><b>05:00:32</b></td><td class="early">-171м</td><td>58м 14с</td><td>53м 38с</td><td><b>2ч 41м 48с</b></td><td class="del">+105м 52с</td><td>success (↻×2)</td></tr>
-<tr><td class="dag">msbi_reload_pl_msk_facts</td><td>БДР (PL)</td><td>07:37:38</td><td>08:05:10</td><td><b>02:56:31</b></td><td class="early">-295м</td><td>12м 46с</td><td>14м 04с</td><td><b>5м 44с</b></td><td class="early">-8м 41с</td><td>success</td></tr>
-<tr><td class="dag">msbi_reload_pl_msk_cube</td><td>БДР (PL)</td><td>07:50:22</td><td>08:19:10</td><td><b>03:02:11</b></td><td class="early">-303м</td><td>0м 15с</td><td>0м 20с</td><td><b>0м 13с</b></td><td>-5с</td><td>success</td></tr></tbody></table></div></div>
+      <thead><tr><th>DAG</th><th>Бизнес</th><th>ср. старт (сен)</th><th>старт 28.10</th><th>Δ старт</th>
+      <th>ср. длит. (сен)</th><th>длит. 28.10</th><th>Δ длит.</th><th>результат</th></tr></thead>
+      <tbody><tr><td class="dag">msbi_reload_sk_cube</td><td>Продажи Строители (SK)</td><td>05:26:41</td><td><b>06:49:14</b></td><td class="del">+83м</td><td>20м 59с</td><td><b>30м 33с</b></td><td class="del">+9м 34с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_st_cube</td><td>Запасы (ST)</td><td>07:32:58</td><td><b>08:22:02</b></td><td class="del">+49м</td><td>1ч 30м 46с</td><td><b>1ч 34м 01с</b></td><td>+3м 15с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ph_cube</td><td>Продажи Братец Лис (PH)</td><td>06:26:07</td><td><b>07:04:42</b></td><td class="del">+39м</td><td>40м 00с</td><td><b>1ч 05м 55с</b></td><td class="del">+25м 54с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pb_facts</td><td>Платежный баланс (PB)</td><td>02:24:10</td><td><b>02:38:58</b></td><td>+15м</td><td>10м 52с</td><td><b>9м 26с</b></td><td>-2м 26с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tv_facts</td><td>Продажи дистрибуции (TV)</td><td>02:42:54</td><td><b>02:53:28</b></td><td>+11м</td><td>34м 58с</td><td><b>31м 20с</b></td><td>-4м 38с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pb_dims</td><td>Платежный баланс (PB)</td><td>23:05:25</td><td><b>23:12:42</b></td><td>+7м</td><td>2м 21с</td><td><b>1м 32с</b></td><td>-49с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sp_dims</td><td>Планы продаж (SP)</td><td>23:05:19</td><td><b>23:12:30</b></td><td>+7м</td><td>2м 45с</td><td><b>1м 38с</b></td><td>-2м 07с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ap_dims</td><td>Кредиторская задолженность (AP)</td><td>23:05:15</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 13с</td><td><b>0м 39с</b></td><td>-35с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ar_dims</td><td>Дебиторская задолженность (AR)</td><td>23:05:18</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 55с</td><td><b>1м 49с</b></td><td>-6с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sd_dims</td><td>Продажи розница (SD)</td><td>23:05:37</td><td><b>23:12:42</b></td><td>+7м</td><td>10м 25с</td><td><b>13м 32с</b></td><td>+3м 07с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_st_dims</td><td>Запасы (ST)</td><td>23:05:31</td><td><b>23:12:35</b></td><td>+7м</td><td>4м 18с</td><td><b>4м 31с</b></td><td>+13с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tv_dims</td><td>Продажи дистрибуции (TV)</td><td>23:05:38</td><td><b>23:12:42</b></td><td>+7м</td><td>5м 34с</td><td><b>6м 21с</b></td><td>+48с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_bs_dims</td><td>ОСВ (BS)</td><td>23:05:27</td><td><b>23:12:30</b></td><td>+7м</td><td>3м 05с</td><td><b>1м 29с</b></td><td>-2м 36с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tv_cube</td><td>Продажи дистрибуции (TV)</td><td>03:17:47</td><td><b>03:24:46</b></td><td>+7м</td><td>10м 17с</td><td><b>9м 21с</b></td><td>-56с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pl_dims</td><td>БДР (PL)</td><td>23:05:24</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 58с</td><td><b>0м 51с</b></td><td>-2м 07с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pl_msk_dims</td><td>БДР (PL)</td><td>23:05:24</td><td><b>23:12:23</b></td><td>+7м</td><td>1м 54с</td><td><b>0м 54с</b></td><td>-1м 00с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tl_dims</td><td>Транспортная логистика (TL)</td><td>23:05:32</td><td><b>23:12:30</b></td><td>+7м</td><td>5м 52с</td><td><b>7м 50с</b></td><td>+1м 58с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ph_dims</td><td>Продажи Братец Лис (PH)</td><td>23:05:38</td><td><b>23:12:35</b></td><td>+7м</td><td>7м 35с</td><td><b>7м 42с</b></td><td>+7с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ob_dims</td><td>Продажи Объектив (OB)</td><td>23:05:37</td><td><b>23:12:30</b></td><td>+7м</td><td>4м 17с</td><td><b>2м 23с</b></td><td>-2м 54с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sk_dims</td><td>Продажи Строители (SK)</td><td>23:05:40</td><td><b>23:12:30</b></td><td>+7м</td><td>5м 38с</td><td><b>6м 20с</b></td><td>+43с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sc_common</td><td>Скоринг (SC)</td><td>03:02:41</td><td><b>03:05:22</b></td><td>+3м</td><td>44м 33с</td><td><b>35м 44с</b></td><td class="early">-9м 50с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sk_yesterday_invoice</td><td>Продажи Строители (SK)</td><td>22:30:07</td><td><b>22:30:02</b></td><td>0м</td><td>0м 38с</td><td><b>0м 15с</b></td><td>-23с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sp_facts</td><td>Планы продаж (SP)</td><td>02:52:15</td><td><b>02:50:30</b></td><td>-2м</td><td>3м 39с</td><td><b>0м 45с</b></td><td>-3м 54с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sp_cube</td><td>Планы продаж (SP)</td><td>02:55:45</td><td><b>02:51:13</b></td><td>-5м</td><td>0м 39с</td><td><b>0м 16с</b></td><td>-23с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_wa_dims</td><td>Web-аналитика (WA)</td><td>06:22:41</td><td><b>06:15:51</b></td><td>-7м</td><td>1м 17с</td><td><b>24м 37с</b></td><td class="del">+23м 20с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ob_facts</td><td>Продажи Объектив (OB)</td><td>03:01:23</td><td><b>02:53:03</b></td><td>-8м</td><td>21м 05с</td><td><b>23м 12с</b></td><td>+2м 07с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sk_facts</td><td>Продажи Строители (SK)</td><td>04:40:01</td><td><b>04:22:53</b></td><td class="early">-17м</td><td>1ч 20м 54с</td><td><b>2ч 26м 22с</b></td><td class="del">+65м 28с</td><td>success (↻×2)</td></tr>
+<tr><td class="dag">msbi_reload_pb_cube</td><td>Платежный баланс (PB)</td><td>03:08:57</td><td><b>02:48:22</b></td><td class="early">-21м</td><td>3м 10с</td><td><b>2м 31с</b></td><td>-38с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sc_partition</td><td>Скоринг (SC)</td><td>04:38:28</td><td><b>04:13:56</b></td><td class="early">-25м</td><td>39м 14с</td><td><b>12м 55с</b></td><td class="early">-27м 18с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ph_facts</td><td>Продажи Братец Лис (PH)</td><td>04:46:18</td><td><b>04:13:56</b></td><td class="early">-32м</td><td>1ч 29м 31с</td><td><b>2ч 50м 47с</b></td><td class="del">+81м 16с</td><td>success (↻×2)</td></tr>
+<tr><td class="dag">msbi_reload_dm_facts</td><td>Монитор дефицита (DM)</td><td>06:59:28</td><td><b>06:26:47</b></td><td class="early">-33м</td><td>1ч 35м 30с</td><td><b>58м 31с</b></td><td class="early">-37м 59с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_wa_facts</td><td>Web-аналитика (WA)</td><td>08:20:34</td><td><b>07:45:12</b></td><td class="early">-35м</td><td>4м 24с</td><td><b>2м 35с</b></td><td>-2м 48с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_wa_cube</td><td>Web-аналитика (WA)</td><td>08:24:55</td><td><b>07:47:47</b></td><td class="early">-37м</td><td>0м 18с</td><td><b>0м 50с</b></td><td>+33с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ob_cube</td><td>Продажи Объектив (OB)</td><td>03:53:56</td><td><b>03:16:15</b></td><td class="early">-38м</td><td>22м 16с</td><td><b>20м 52с</b></td><td>-2м 23с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tl_facts</td><td>Транспортная логистика (TL)</td><td>02:45:53</td><td><b>02:08:03</b></td><td class="early">-38м</td><td>6м 00с</td><td><b>3м 40с</b></td><td>-3м 20с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_tl_cube</td><td>Транспортная логистика (TL)</td><td>02:51:48</td><td><b>02:11:43</b></td><td class="early">-40м</td><td>2м 03с</td><td><b>1м 41с</b></td><td>-21с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sc_stock</td><td>Скоринг (SC)</td><td>02:14:56</td><td><b>01:26:40</b></td><td class="early">-48м</td><td>51м 18с</td><td><b>32м 12с</b></td><td class="early">-20м 06с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_st_facts</td><td>Запасы (ST)</td><td>05:02:48</td><td><b>04:13:56</b></td><td class="early">-49м</td><td>2ч 52м 50с</td><td><b>4ч 08м 07с</b></td><td class="del">+75м 16с</td><td>success (↻×2)</td></tr>
+<tr><td class="dag">msbi_reload_sd_stock</td><td>Продажи розница (SD)</td><td>02:16:35</td><td><b>01:26:40</b></td><td class="early">-50м</td><td>37м 59с</td><td><b>26м 17с</b></td><td class="early">-12м 42с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ar_facts</td><td>Дебиторская задолженность (AR)</td><td>01:40:04</td><td><b>00:31:22</b></td><td class="early">-69м</td><td>7м 16с</td><td><b>6м 04с</b></td><td>-2м 12с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_dm_cube</td><td>Монитор дефицита (DM)</td><td>08:34:54</td><td><b>07:25:15</b></td><td class="early">-70м</td><td>1ч 32м 06с</td><td><b>1ч 49м 32с</b></td><td class="del">+17м 26с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ar_cube</td><td>Дебиторская задолженность (AR)</td><td>01:47:11</td><td><b>00:37:23</b></td><td class="early">-70м</td><td>10м 47с</td><td><b>10м 27с</b></td><td>-19с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sc_invoice</td><td>Скоринг (SC)</td><td>04:19:06</td><td><b>03:08:37</b></td><td class="early">-70м</td><td>35м 35с</td><td><b>46м 11с</b></td><td class="del">+10м 36с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sd_facts</td><td>Продажи розница (SD)</td><td>04:19:58</td><td><b>03:08:37</b></td><td class="early">-71м</td><td>2ч 02м 48с</td><td><b>1ч 15м 00с</b></td><td class="early">-48м 48с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sc_cube</td><td>Скоринг (SC)</td><td>05:38:38</td><td><b>04:26:51</b></td><td class="early">-72м</td><td>1ч 03м 03с</td><td><b>2ч 52м 30с</b></td><td class="del">+109м 27с</td><td>success (↻×2)</td></tr>
+<tr><td class="dag">msbi_reload_ap_facts</td><td>Кредиторская задолженность (AP)</td><td>06:49:31</td><td><b>05:34:45</b></td><td class="early">-75м</td><td>1ч 33м 17с</td><td><b>3м 34с</b></td><td class="early">-90м 43с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sk_invoice</td><td>Продажи Строители (SK)</td><td>03:51:39</td><td><b>02:18:28</b></td><td class="early">-93м</td><td>13м 15с</td><td><b>2м 01с</b></td><td class="early">-12м 14с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sd_invoice</td><td>Продажи розница (SD)</td><td>04:03:11</td><td><b>02:26:39</b></td><td class="early">-97м</td><td>1ч 03м 18с</td><td><b>1ч 07м 03с</b></td><td>+3м 45с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ob_invoice</td><td>Продажи Объектив (OB)</td><td>03:52:18</td><td><b>02:13:48</b></td><td class="early">-98м</td><td>1м 44с</td><td><b>0м 17с</b></td><td>-2м 26с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_ph_invoice</td><td>Продажи Братец Лис (PH)</td><td>04:01:06</td><td><b>02:21:07</b></td><td class="early">-100м</td><td>4м 16с</td><td><b>1м 42с</b></td><td>-3м 34с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pl_cube</td><td>БДР (PL)</td><td>09:26:52</td><td><b>07:42:18</b></td><td class="early">-105м</td><td>0м 31с</td><td><b>0м 17с</b></td><td>-14с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_bs_facts</td><td>ОСВ (BS)</td><td>06:35:06</td><td><b>04:37:52</b></td><td class="early">-117м</td><td>1ч 31м 19с</td><td><b>57м 58с</b></td><td class="early">-34м 20с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_sd_cube</td><td>Продажи розница (SD)</td><td>06:37:32</td><td><b>04:23:33</b></td><td class="early">-134м</td><td>1ч 13м 58с</td><td><b>3ч 21м 51с</b></td><td class="del">+127м 53с</td><td>✗ FAILED</td></tr>
+<tr><td class="dag">msbi_reload_ap_cube</td><td>Кредиторская задолженность (AP)</td><td>07:53:21</td><td><b>05:38:15</b></td><td class="early">-135м</td><td>0м 28с</td><td><b>0м 17с</b></td><td>-11с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_bs_cube</td><td>ОСВ (BS)</td><td>08:01:19</td><td><b>05:35:51</b></td><td class="early">-145м</td><td>1м 57с</td><td><b>2м 04с</b></td><td>+7с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pl_facts</td><td>БДР (PL)</td><td>08:21:23</td><td><b>05:00:32</b></td><td class="early">-201м</td><td>1ч 05м 32с</td><td><b>2ч 41м 48с</b></td><td class="del">+96м 16с</td><td>success (↻×2)</td></tr>
+<tr><td class="dag">msbi_reload_pl_msk_facts</td><td>БДР (PL)</td><td>08:21:23</td><td><b>02:56:31</b></td><td class="early">-325м</td><td>16м 52с</td><td><b>5м 44с</b></td><td class="early">-12м 08с</td><td>success</td></tr>
+<tr><td class="dag">msbi_reload_pl_msk_cube</td><td>БДР (PL)</td><td>08:38:11</td><td><b>03:02:11</b></td><td class="early">-336м</td><td>0м 22с</td><td><b>0м 13с</b></td><td>-9с</td><td>success</td></tr></tbody></table></div></div>
   </div>
 
   <div id="panel-recalc" class="tabpanel" style="display:none">
